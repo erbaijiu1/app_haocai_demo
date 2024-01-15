@@ -2,7 +2,10 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs"
+    ,"pages/cwl/cwl_daily"
+    ,"pages/lottery/lottery_daily"
   ],
+  
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
