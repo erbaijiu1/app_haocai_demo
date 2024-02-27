@@ -47,14 +47,14 @@ Page({
   }
   ,onShareAppMessage: function () {
     return {
-      title: '遇见好彩,遇见你的专属好彩。',
+      title: '下一个彩票大奖就是你',
       query: '/pages/index/index'
     }
   }
   /*
   ,onShareTimeline: function () {
     return {
-      title: '遇见好彩,遇见你的专属好彩。',
+      title: '下一个彩票大奖就是你',
       path: 'https://yjhcai.cn/index'
     }
   }*/

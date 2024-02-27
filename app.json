@@ -4,6 +4,7 @@
     "pages/logs/logs"
     ,"pages/cwl/cwl_daily"
     ,"pages/lottery/lottery_daily"
+    ,"pages/training/training"
   ],
   
   "window":{

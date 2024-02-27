@@ -45,12 +45,32 @@ Page({
       hasUserInfo: true
     })
   }
-  ,onShareAppMessage: function () {
-    return {
-      title: '下一个彩票大奖就是你',
-      query: '/pages/index/index'
-    }
+  // ,onShareAppMessage: function () {
+  //   return {
+  //     title: '下一个彩票大奖就是你',
+  //     query: '/pages/index/index'
+  //   }
+  // }
+
+  // 在onShareAppMessage事件方法中，处理H5页面发送的消息
+  , onShareAppMessage: function (res) {
+    // 获取H5页面发送的消息
+    var data = res.data;
+
+    // 生成分享信息
+    var shareData = {
+      title: data.title,
+      desc: data.desc,
+      imgUrl: data.imgUrl,
+      url: data.url,
+    };
+
+    // 调起小程序分享
+    wx.showShareMenu({
+      shareData: shareData,
+    });
   }
+
   /*
   ,onShareTimeline: function () {
     return {

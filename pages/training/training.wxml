@@ -1,0 +1,4 @@
+<!--cwl_daily.wxml-->
+<view>
+  <web-view src="https://www.yjhcai.cn/training"></web-view>
+</view>
