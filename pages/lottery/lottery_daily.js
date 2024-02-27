@@ -48,14 +48,14 @@ Page({
   ,onShareAppMessage: function () {
     return {
       title: '下一个彩票大奖就是你',
-      query: '/pages/index/index'
+      query: '/pages/lottery/lottery_daily'
     }
   }
-  /*
+  
   ,onShareTimeline: function () {
     return {
       title: '下一个彩票大奖就是你',
-      path: 'https://yjhcai.cn/index'
+      path: '/pages/lottery/lottery_daily'
     }
-  }*/
+  }
 })

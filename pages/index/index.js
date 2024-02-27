@@ -51,11 +51,11 @@ Page({
       query: '/pages/index/index'
     }
   }
-  /*
+  
   ,onShareTimeline: function () {
     return {
       title: '下一个彩票大奖就是你',
-      path: 'https://yjhcai.cn/index'
+      path: '/pages/index/index'
     }
-  }*/
+  }
 })
