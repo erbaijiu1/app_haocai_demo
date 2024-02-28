@@ -9,20 +9,3 @@
   box-sizing: border-box;
 } 
 
-/* tabbar.wxss */
-.tabbar {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #f8f8f8;
-    border-top: 1px solid #ccc;
-  }
-  
-  .tabbar-item {
-    font-size: 14px;
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60rpx; /* 设置合适的高度 */
-  }

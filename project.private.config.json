@@ -8,6 +8,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/cwl/cwl_daily",
+                    "pathName": "pages/cwl/cwl_daily",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "",
                     "pathName": "pages/training/training",
                     "query": "",
