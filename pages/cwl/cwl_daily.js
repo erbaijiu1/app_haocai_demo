@@ -58,4 +58,11 @@ Page({
       path: '/pages/cwl/cwl_daily'
     }
   }
+    , onTabItemTap(item) {
+        // console.log("TabBar item clicked:--", item.index, item.pagePath);
+        // 触发页面刷新操作
+        wx.reLaunch({
+            url: '/' + item.pagePath
+        });
+    }
 })

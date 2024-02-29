@@ -48,14 +48,21 @@ Page({
   ,onShareAppMessage: function () {
     return {
       title: '下一个彩票大奖就是你',
-      query: '/pages/lottery/lottery_daily'
+      query: '/page/subs/subs_main'
     }
   }
   
   ,onShareTimeline: function () {
     return {
       title: '下一个彩票大奖就是你',
-      path: '/pages/lottery/lottery_daily'
+      path: '/page/subs/subs_main'
     }
   }
+  , onTabItemTap(item) {
+    // console.log("TabBar item clicked:--", item.index, item.pagePath);
+    // 触发页面刷新操作
+    wx.reLaunch({
+        url: '/' + item.pagePath
+    });
+}
 })
