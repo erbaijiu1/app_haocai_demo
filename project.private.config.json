@@ -8,9 +8,9 @@
         "miniprogram": {
             "list": [
                 {
-                    "name": "pages/cwl/cwl_daily",
-                    "pathName": "pages/cwl/cwl_daily",
-                    "query": "",
+                    "name": "pages/index/index",
+                    "pathName": "pages/index/index",
+                    "query": "redirect_url=https%3A%2F%2Fyjhcai.cn%2Ftrend%3Ftrend_type%3Dssq",
                     "launchMode": "default",
                     "scene": null
                 },

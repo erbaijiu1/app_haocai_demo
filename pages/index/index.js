@@ -10,6 +10,7 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     canIUseGetUserProfile: false,
     canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
+    ,web_view_url:'https://www.yjhcai.cn/index'
   }
   // 事件处理函数
   ,bindViewTap() {
@@ -17,12 +18,16 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad() {
-    if (wx.getUserProfile) {
+  onLoad(options) {
+    //   console.log("get options:", options);
+      var web_view_url = 'https://www.yjhcai.cn/index';
+      if(options && options.redirect_url && options.redirect_url.length > 3){
+        web_view_url = decodeURIComponent(options.redirect_url);
+        // console.log("go to :", web_view_url)
+      }
       this.setData({
-        canIUseGetUserProfile: true
-      })
-    }
+        web_view_url:web_view_url
+      });
   },
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
@@ -45,10 +50,12 @@ Page({
       hasUserInfo: true
     })
   }
-  ,onShareAppMessage: function () {
+  ,onShareAppMessage: function (options) {
+    var encodedUrl = encodeURIComponent(options.webViewUrl);
+    // console.log(encodedUrl);
     return {
       title: '下一个彩票大奖就是你',
-      query: '/pages/index/index'
+      path: '/pages/index/index?redirect_url=' + encodedUrl
     }
   }
   
@@ -58,11 +65,4 @@ Page({
       path: '/pages/index/index'
     }
   }
-    , onTabItemTap(item) {
-        // console.log("TabBar item clicked:--", item.index, item.pagePath);
-        // 触发页面刷新操作
-        wx.reLaunch({
-            url: '/' + item.pagePath
-        });
-    }
 })
