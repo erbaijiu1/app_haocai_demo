@@ -18,17 +18,25 @@ Page({
       url: '../logs/logs'
     })
   },
-  handle_html_msg: function(e) {
+  handle_html_msg: function(e) {a
+    console.log("msg from user.");
     // 获取从网页发送过来的消息
     const data = e.detail.data;
       if (data && data.length > 0) {
+          console.log("get msg:", data);
           // 读取最后一条消息
           const lastMessage = data[data.length - 1];
-          // 从 JSON 数据中获取 token 和 login_id
-          const token = lastMessage.token;
-          const login_id = lastMessage.login_id;
-          wx.setStorageSync('token', token);
-          wx.setStorageSync('login_id', login_id);
+          // 空值检查并获取 token 和 login_id
+          let token = null;
+          let login_id = null;
+          if (lastMessage && lastMessage.cookies_data) {
+              token = lastMessage.cookies_data.token;
+              login_id = lastMessage.cookies_data.login_id;
+          }
+          if(token && login_id){
+            wx.setStorageSync('token', token);
+            wx.setStorageSync('login_id', login_id);
+          }
     } else {
         console.error('接收到的消息数据为空或无效');
     }
