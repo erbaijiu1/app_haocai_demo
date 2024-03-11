@@ -18,13 +18,39 @@ Page({
       url: '../logs/logs'
     })
   },
+  handle_html_msg: function(e) {
+    // 获取从网页发送过来的消息
+    const data = e.detail.data;
+      if (data && data.length > 0) {
+          // 读取最后一条消息
+          const lastMessage = data[data.length - 1];
+          // 从 JSON 数据中获取 token 和 login_id
+          const token = lastMessage.token;
+          const login_id = lastMessage.login_id;
+          wx.setStorageSync('token', token);
+          wx.setStorageSync('login_id', login_id);
+    } else {
+        console.error('接收到的消息数据为空或无效');
+    }
+  }
+  ,
   onLoad(options) {
+    var my_token = wx.getStorageSync('token');
+    var login_id = wx.getStorageSync('login_id');
+    var url_str = "token=" + my_token + "&login_id=" + login_id;
     //   console.log("get options:", options);
       var web_view_url = 'https://www.yjhcai.cn/index';
       if(options && options.redirect_url && options.redirect_url.length > 3){
         web_view_url = decodeURIComponent(options.redirect_url);
         // console.log("go to :", web_view_url)
       }
+      // 判断链接中是否已经存在参数
+      if (web_view_url.includes('?')) {
+          web_view_url += '&' + url_str;
+      } else {
+          web_view_url += '?' + url_str;
+      }
+
       this.setData({
         web_view_url:web_view_url
       });

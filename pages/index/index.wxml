@@ -1,4 +1,4 @@
 <!--index.wxml-->
 <view>
-  <web-view src="{{web_view_url}}"></web-view>
+  <web-view src="{{web_view_url}}" bindmessage="handle_html_msg"></web-view>
 </view>
