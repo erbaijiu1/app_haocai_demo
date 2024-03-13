@@ -24,6 +24,28 @@ Page({
       })
     }
   },
+  handle_html_msg: function(e) {
+    console.log("handle_html_msg active.");
+    // 获取从网页发送过来的消息
+    const data = e.detail.data;
+      if (data && data.length > 0) {
+          console.log("get msg:", data);
+          // 读取最后一条消息
+          const lastMessage = data[data.length - 1];
+          // 空值检查并获取 token 和 login_id
+          let token = null;
+          let login_id = null;
+          if (lastMessage && lastMessage.cookies_data) {
+              token = lastMessage.cookies_data.token;
+              login_id = lastMessage.cookies_data.login_id;
+          }
+          if(token && login_id){
+            wx.setStorageSync('token', token);
+            wx.setStorageSync('login_id', login_id);
+          }
+    } else {
+        console.error('接收到的消息数据为空或无效');
+    }},
   getUserProfile(e) {
     // 推荐使用wx.getUserProfile获取用户信息，开发者每次通过该接口获取用户个人信息均需用户确认，开发者妥善保管用户快速填写的头像昵称，避免重复弹窗
     wx.getUserProfile({

@@ -19,12 +19,30 @@ Page({
     })
   },
   onLoad(options) {
-    //   console.log("get options:", options);
+      console.log("get options:" + options);
+      var my_token = wx.getStorageSync('token');
+      var login_id = wx.getStorageSync('login_id');
+      if(options && options.token && options.login_id){
+        wx.setStorageSync('token', options.token);
+        wx.setStorageSync('login_id', options.login_id);
+        my_token = options.token;
+        login_id = options.login_id;
+      }
+
       var web_view_url = 'https://www.yjhcai.cn/index';
       if(options && options.redirect_url && options.redirect_url.length > 3){
         web_view_url = decodeURIComponent(options.redirect_url);
-        // console.log("go to :", web_view_url)
       }
+      // 如果有token, 加上token 判断链接中是否已经存在参数
+      if(my_token && login_id){
+        var url_str = "token=" + my_token + "&login_id=" + login_id;
+        if (web_view_url.includes('?')) {
+            web_view_url += '&' + url_str;
+        } else {
+            web_view_url += '?' + url_str;
+        }
+      }
+
       this.setData({
         web_view_url:web_view_url
       });
