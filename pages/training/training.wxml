@@ -1,4 +1,4 @@
 <!--cwl_daily.wxml-->
 <view>
-  <web-view src="https://www.yjhcai.cn/training"></web-view>
+  <web-view src="https://www.yjhcai.cn/training"  bindmessage="handle_html_msg"></web-view>
 </view>
