@@ -19,7 +19,7 @@ Page({
     })
   },
   onLoad(options) {
-      console.log("get options:" + options);
+      // console.log("get options:" + options);
       var my_token = wx.getStorageSync('token');
       var login_id = wx.getStorageSync('login_id');
       if(options && options.token && options.login_id){
