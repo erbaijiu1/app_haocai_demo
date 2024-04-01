@@ -69,11 +69,22 @@ Page({
     })
   }
   ,onShareAppMessage: function (options) {
-    var encodedUrl = encodeURIComponent(options.webViewUrl);
+    var web_view_url = options.webViewUrl;
+    var login_id = wx.getStorageSync('login_id');
+    if(login_id && login_id.length>0){
+        var add_symbol = "?";
+        if(web_view_url.indexOf("?") !== -1){
+            add_symbol = "&";
+        }
+        web_view_url += add_symbol + 'sharer=' + login_id;
+    }
+
+    var encodedUrl = encodeURIComponent(web_view_url);
+    var path_url = '/pages/index/index?redirect_url=' + encodedUrl;
     // console.log(encodedUrl);
     return {
       title: '下一个彩票大奖就是你',
-      path: '/pages/index/index?redirect_url=' + encodedUrl
+      path: path_url
     }
   }
   
