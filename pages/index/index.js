@@ -6,7 +6,8 @@ const app = getApp()
 
 Page({
   data: {
-    web_view_url:'https://www.yjhcai.cn/index',
+    base_web_view :'https://www.yjhcai.cn/index',
+    web_view_url: 'https://www.yjhcai.cn/index',
     page_url : '/pages/index/index'
   },
   onLoad(options) {
@@ -22,6 +23,12 @@ Page({
       title: '下一个彩票大奖就是你',
       path: path_url
     }
+  }
+
+  ,onShow: function() {
+    // 在页面显示时执行刷新操作
+    var timestamp = new Date().getTime();
+    this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }
   
 //   ,onShareTimeline: function () {
