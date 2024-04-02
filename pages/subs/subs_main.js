@@ -6,8 +6,8 @@ const app = getApp()
 
 Page({
   data: {
-    base_web_view:'https://www.yjhcai.cn/subs_main',
-    web_view_url:'https://www.yjhcai.cn/subs_main',
+    base_web_view: app.globalData.host_name + '/subs_main',
+    web_view_url: app.globalData.host_name + '/subs_main',
     page_url : '/pages/subs/subs_main'
   },
   onLoad(options) {

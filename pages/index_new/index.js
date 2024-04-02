@@ -6,27 +6,37 @@ const app = getApp()
 
 Page({
   data: {
-    base_web_view : app.globalData.host_name + '/lottery_daily',
-    web_view_url: app.globalData.host_name + '/lottery_daily',
-    page_url : '/pages/lottery/lottery_daily'
+    base_web_view :app.globalData.host_name + '/index',
+    web_view_url: app.globalData.host_name + '/index',
+    page_url : '/pages/index_new/index'
   },
   onLoad(options) {
+    console.log('get url:' + this.data.web_view_url);
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
       this.setData({
         web_view_url:web_view_url
       });
+      console.log('get url' + this.data.web_view_url);
   }
   ,onShareAppMessage: function (options) {
     var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);
+
     return {
       title: '下一个彩票大奖就是你',
       path: path_url
     }
   }
-  
+
   ,onShow: function() {
     // 在页面显示时执行刷新操作
     var timestamp = new Date().getTime();
     this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }
+  
+//   ,onShareTimeline: function () {
+//     return {
+//       title: '下一个彩票大奖就是你',
+//       path: this.data.page_url
+//     }
+//   }
 })

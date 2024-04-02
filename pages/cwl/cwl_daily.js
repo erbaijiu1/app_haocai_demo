@@ -6,8 +6,8 @@ const app = getApp()
 
 Page({
   data: {
-    base_web_view:'https://www.yjhcai.cn/cwl_daily',
-    web_view_url:'https://www.yjhcai.cn/cwl_daily',
+    base_web_view: app.globalData.host_name + '/cwl_daily',
+    web_view_url: app.globalData.host_name + '/cwl_daily',
     page_url : '/pages/cwl/cwl_daily'
   },
   onLoad(options) {

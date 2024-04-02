@@ -6,8 +6,8 @@ const app = getApp()
 
 Page({
   data: {
-    base_web_view:'https://www.yjhcai.cn/trend',
-    web_view_url:'https://www.yjhcai.cn/trend',
+    base_web_view: app.globalData.host_name + '/trend',
+    web_view_url: app.globalData.host_name + '/trend',
     page_url : '/pages/trend/trend'
   },
   onLoad(options) {
