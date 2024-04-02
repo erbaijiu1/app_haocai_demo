@@ -10,9 +10,9 @@
                 {
                     "name": "pages/index/index",
                     "pathName": "pages/index/index",
-                    "query": "redirect_url=https%3A%2F%2Fyjhcai.cn%2Ftrend%3Ftrend_type%3Dssq",
+                    "query": "",
                     "launchMode": "default",
-                    "scene": null
+                    "scene": 1017
                 },
                 {
                     "name": "",

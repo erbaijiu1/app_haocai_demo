@@ -6,8 +6,8 @@ const app = getApp()
 
 Page({
   data: {
-    web_view_url:'https://www.yjhcai.cn/index',
-    page_url : '/pages/index/index'
+    web_view_url:'https://www.yjhcai.cn/trend',
+    page_url : '/pages/trend/trend'
   },
   onLoad(options) {
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
@@ -23,11 +23,4 @@ Page({
       path: path_url
     }
   }
-  
-//   ,onShareTimeline: function () {
-//     return {
-//       title: '下一个彩票大奖就是你',
-//       path: this.data.page_url
-//     }
-//   }
 })
