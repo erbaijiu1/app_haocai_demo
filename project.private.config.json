@@ -3,12 +3,19 @@
     "projectname": "app_haocai_demo",
     "setting": {
         "compileHotReLoad": true,
-        "urlCheck": false,
+        "urlCheck": true,
         "preloadBackgroundData": false
     },
     "condition": {
         "miniprogram": {
             "list": [
+                {
+                    "name": "pages/index_new/index",
+                    "pathName": "pages/index_new/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
                 {
                     "name": "pages/index/index",
                     "pathName": "pages/index/index",

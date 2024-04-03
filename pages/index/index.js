@@ -11,12 +11,10 @@ Page({
     page_url : '/pages/index/index'
   },
   onLoad(options) {
-    console.log('get url:' + this.data.web_view_url);
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
       this.setData({
         web_view_url:web_view_url
       });
-      console.log('get url::' + this.data.web_view_url);
   }
   ,onShareAppMessage: function (options) {
     var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);
@@ -29,6 +27,13 @@ Page({
 
   ,onShow: function() {
     // 在页面显示时执行刷新操作
+    var timestamp = new Date().getTime();
+    //this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
+  }
+  ,onTabItemTap: function(item) {
+    // console.log(item.index)
+    // console.log(item.pagePath)
+    // console.log(item.text)
     var timestamp = new Date().getTime();
     this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }

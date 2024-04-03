@@ -19,15 +19,14 @@
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 
-  ,
-     "tabBar": {
+  ,"tabBar": {
     "color": "#7A7E83",
     "selectedColor": "#D85E5B",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [{
             "text": "首页",
-            "pagePath": "pages/index_new/index",
+            "pagePath": "pages/index/index",
             "iconPath": "img/memu/index1.png",
             "selectedIconPath": "img/memu/index2.png"
         },
@@ -53,7 +52,6 @@
             "iconPath": "img/memu/my1.png",
             "selectedIconPath": "img/memu/my2.png"
         }
-
     ]
     }
 }
