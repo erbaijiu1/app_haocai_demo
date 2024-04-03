@@ -27,13 +27,11 @@ Page({
 
   ,onShow: function() {
     // 在页面显示时执行刷新操作
-    var timestamp = new Date().getTime();
+    // var timestamp = new Date().getTime();
     //this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }
   ,onTabItemTap: function(item) {
     // console.log(item.index)
-    // console.log(item.pagePath)
-    // console.log(item.text)
     var timestamp = new Date().getTime();
     this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }

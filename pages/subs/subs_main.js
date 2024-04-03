@@ -29,4 +29,9 @@ Page({
     var timestamp = new Date().getTime();
     // this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }
+  ,onTabItemTap: function(item) {
+    // console.log(item.index)
+    var timestamp = new Date().getTime();
+    this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
+  }
 })
