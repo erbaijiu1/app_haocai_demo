@@ -1,4 +1,19 @@
 <!--index.wxml-->
 <view>
   <web-view src="{{web_view_url}}"></web-view>
+   <!--
+  <official-account></official-account>
 </view>
+
+<view class="tip-wraper">
+  <image class="tip-gif" 
+  mode="widthFix" 
+  src="/img/add_to_app_tip.gif"></image>
+  
+ 
+  <image bindtap="closeTip"
+  class="tip-close" 
+  src='./images/close.png'></image>
+  -->
+</view>
+

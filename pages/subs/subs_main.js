@@ -6,9 +6,9 @@ const app = getApp()
 
 Page({
   data: {
-    base_web_view: app.globalData.host_name + '/cwl_daily',
-    web_view_url: app.globalData.host_name + '/cwl_daily',
-    page_url : '/pages/cwl/cwl_daily'
+    base_web_view: app.globalData.host_name + '/subs_main',
+    web_view_url: app.globalData.host_name + '/subs_main',
+    page_url : '/pages/subs/subs_main'
   },
   onLoad(options) {
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
@@ -24,10 +24,14 @@ Page({
       path: path_url
     }
   }
-
   ,onShow: function() {
     // 在页面显示时执行刷新操作
     var timestamp = new Date().getTime();
     // this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
+  }
+  ,onTabItemTap: function(item) {
+    // console.log(item.index)
+    var timestamp = new Date().getTime();
+    this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
   }
 })
