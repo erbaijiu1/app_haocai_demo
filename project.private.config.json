@@ -10,6 +10,20 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/cwl/cwl_daily_mini",
+                    "pathName": "pages/cwl/cwl_daily_mini",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "tabs",
+                    "pathName": "pages/cwl/tabs",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/index_new/index",
                     "pathName": "pages/index_new/index",
                     "query": "",

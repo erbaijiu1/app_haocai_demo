@@ -8,6 +8,7 @@
     ,"pages/subs/subs_main"
     ,"pages/trend/trend"
     ,"pages/cwl/cwl_daily_mini"
+    ,"pages/cwl/tabs"
   ],
   
   "window":{

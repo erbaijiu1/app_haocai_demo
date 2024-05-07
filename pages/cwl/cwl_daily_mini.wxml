@@ -1,24 +1,51 @@
-<view class="page">
-
-  <mp-tabs 
-    tabs="{{tabs}}" 
-    activeTab="{{activeTab}}" 
-    swiperClass="weui-tabs-swiper"
-    bindtabclick="onTabClick"
-    bindchange="onChange"
-    activeClass="tab-bar-title__selected"
-    
-  >
+<mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
     <block wx:for="{{tabs}}" wx:key="title">
-      <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick" >
-        <image src="{{item.img}}" mode="widthFix"></image>
-        <view class="item-title">
-          {{item.title2}}
+        <view class="tab-content" slot="tab-content-{{index}}">
+            <view wx:if="{{index == 0}}" class="kj_all_list_container">
+                <view class="kj_ball_list_container">
+                    <!-- 00000----   {{item.title}}  -->
+                    <view class="kj_ball_list_icon_container">
+                        <image src="https://yjhcai.cn/static/img/icon/dlt.png" mode="aspectFit" class="kj_pic_icon" />
+                    </view>
+                    <view>
+                        <view class="kj_ball_list_desc_text">
+                            <view class="kj_ball_list_desc_text_issue">{{cwl_data.ssq_result.cn_name}} 第{{cwl_data.ssq_result.Fissue}}期</view>
+                            <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.Fdate}}</view>
+                            <view class="kj_ball_list_desc_text_open_day">周二/四/日</view>
+                        </view>
+                        <view class="kj_ball_list">
+                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_each_ball">
+                                {{item}}
+                            </view>
+                            <view class="kj_each_ball">{{cwl_data.ssq_result.Fblue_ball}}</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- 下面是中奖图表 -->
+                <view class="winning_detail_table">
+
+
+                    <view class="winning_detail_table_header" >
+                        <view class="winning_detail_table_cell">奖项</view>
+                        <view class="winning_detail_table_cell">中奖规则</view>
+                        <view class="winning_detail_table_cell">中奖注数</view>
+                        <view class="winning_detail_table_cell">中奖金额(元)</view>
+                    </view>
+                    <view class="winning_detail_table_body">
+                        <view class="winning_detail_table_row" wx:for="{{prizeGrades}}" wx:key="key" wx:for-index="idx" >
+                            <view class="winning_detail_table_cell">{{prizeGrades[index]}}</view>
+                            <view class="winning_detail_table_cell"><image src='../../img/prize_demo/dlt_prize_{{index + 1 }}.png' mode='aspectFit' ></image></view>
+                            <view class="winning_detail_table_cell">{{cwl_data.ssq_result.prize_grades[index].typenum}}</view>
+                            <view class="winning_detail_table_cell">{{cwl_data.ssq_result.prize_grades[index].typemoney}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view wx:else="">
+                1111---- {{item.title}}
+            </view>
+
         </view>
-        <view class="item-desc">
-          {{item.desc}}
-        </view>
-      </view>
     </block>
-  </mp-tabs>
-  </view>
+</mp-tabs>

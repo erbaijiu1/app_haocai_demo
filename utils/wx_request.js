@@ -1,6 +1,6 @@
 // utils/request.js
 // const baseUrl = 'https://yjhcai.cn'; // 设置API的基础路径
-const baseUrl = 'http://127.0.0.1:80'; // 设置API的基础路径
+const baseUrl = 'http://127.0.0.1:8000'; // 设置API的基础路径
 
 const wx_request = (url, method, data, header = {}) => {
   return new Promise((resolve, reject) => {
