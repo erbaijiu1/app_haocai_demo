@@ -6,10 +6,10 @@ Page({
     tabs: [],
     activeTab: 0,
     cwl_data:{}
-    ,prizeGrades:{0:'一等奖', 1:'二等奖',2:'三等奖',3:'四等奖',4:'五等奖',5:'六等奖',6:'七等奖'}
+    ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
   }
   ,onLoad() {
-    const titles = ['不却A', '全部精彩']
+    const titles = ['双色球', '全部福彩']
     const tabs = titles.map(item => ({title: item}))
     this.setData({tabs})
 
