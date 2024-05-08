@@ -13,10 +13,10 @@
                             <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.open_day}}</view>
                         </view>
                         <view class="kj_ball_list">
-                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_each_ball">
+                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base">
                                 {{item}}
                             </view>
-                            <view class="kj_each_ball">{{cwl_data.ssq_result.Fblue_ball}}</view>
+                            <view class="kj_ball_list_ball_base">{{cwl_data.ssq_result.Fblue_ball}}</view>
                         </view>
                     </view>
                 </view>
@@ -57,23 +57,23 @@
                                 <block wx:if="{{ item === 'qlb'}}">
                                     <!-- 这是展示前面10个的 -->
                                     <view class="kj_ball_list_klb_row"> 
-                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_each_ball" wx:if="{{index < 10}}">
+                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base" wx:if="{{index < 10}}">
                                         {{item}}
                                         </view>
                                     </view>
                                     <!-- 这是展示后面10个的 -->
                                     <view class="kj_ball_list_klb_row">
-                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls.slice(10, 20)}}" wx:key="index" class="kj_each_ball"  wx:if="{{index > 10}}">
+                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls.slice(10, 20)}}" wx:key="index" class="kj_ball_list_ball_base"  wx:if="{{index > 10}}">
                                         {{item}}
                                         </view>
                                     </view>
                                 </block>
 
                                 <block wx:else="">
-                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_each_ball">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base">
                                         {{item}}
                                     </view>
-                                <view class="kj_each_ball">{{cwl_data[item + '_result'].Fblue_ball}}</view>
+                                <view class="kj_ball_list_ball_base">{{cwl_data[item + '_result'].Fblue_ball}}</view>
                                 </block>
 
 

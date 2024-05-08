@@ -7,36 +7,37 @@
                     <view class="kj_ball_list_icon_container">
                         <image src="../../img/icon/cwl_ssq.png" mode="aspectFit" class="kj_pic_icon" />
                     </view>
-                    <view>
+                    <view class="kj_ball_list_ball_issue_and_ball">
                         <view class="kj_ball_list_desc_text">
                             <view class="kj_ball_list_desc_text_issue">{{cwl_data.ssq_result.cn_name}} 第{{cwl_data.ssq_result.Fissue}}期</view>
                             <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.Fdate}}</view>
                             <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.open_day}}</view>
                         </view>
                         <view class="kj_ball_list">
-                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_each_ball">
+                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
                                 {{item}}
                             </view>
-                            <view class="kj_each_ball">{{cwl_data.ssq_result.Fblue_ball}}</view>
+                            <view class="kj_ball_list_ball_base cwl_ball_add_blue"  style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">{{cwl_data.ssq_result.Fblue_ball}}</view>
                         </view>
                     </view>
                 </view>
                 <!-- 下面是中奖的注数及金额，中奖规则图形化展示等 -->
                 <view class="winning_detail_table">
                     <view class="winning_detail_table_header" >
-                        <view class="winning_detail_table_head_cell">奖项</view>
-                        <view class="winning_detail_table_head_cell">中奖规则</view>
-                        <view class="winning_detail_table_head_cell">中奖注数</view>
-                        <view class="winning_detail_table_head_cell">中奖金额(元)</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_1">奖项</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_2">中奖规则</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_3">中奖注数</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_4">中奖金额(元)</view>
                     </view>
                     <view class="winning_detail_table_body">
                         <view class="winning_detail_table_row" wx:for="{{prizeGrades}}" wx:key="key" wx:for-index="idx" >
-                            <view class="winning_detail_table_cell">{{prizeGrades[idx]}}</view>
-                            <view class="winning_detail_table_cell">
-                                <image src='../../img/prize_demo/ssq_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic" ></image>
+                            <view class="winning_detail_table_cell winning_detail_table_head_1">
+                            {{prizeGrades[idx]}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_2">
+                                <image src='../../img/prize_demo/ssq_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
                             </view>
-                            <view class="winning_detail_table_cell">{{cwl_data.ssq_result.prize_grades[idx-1].typenum}}</view>
-                            <view class="winning_detail_table_cell winning_detail_table_cell_money">{{cwl_data.ssq_result.prize_grades[idx-1].typemoney}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{cwl_data.ssq_result.prize_grades[idx-1].typenum}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{cwl_data.ssq_result.prize_grades[idx-1].typemoney}}</view>
                         </view>
                     </view>
                 </view>
@@ -58,23 +59,23 @@
                                 <block wx:if="{{ item === 'qlb'}}">
                                     <!-- 这是展示前面10个的 -->
                                     <view class="kj_ball_list_klb_row"> 
-                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_each_ball" wx:if="{{index < 10}}">
+                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base" wx:if="{{index < 10}}">
                                         {{item}}
                                         </view>
                                     </view>
                                     <!-- 这是展示后面10个的 -->
                                     <view class="kj_ball_list_klb_row">
-                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls.slice(10, 20)}}" wx:key="index" class="kj_each_ball"  wx:if="{{index > 10}}">
+                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls.slice(10, 20)}}" wx:key="index" class="kj_ball_list_ball_base"  wx:if="{{index > 10}}">
                                         {{item}}
                                         </view>
                                     </view>
                                 </block>
 
                                 <block wx:else="">
-                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_each_ball">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base">
                                         {{item}}
                                     </view>
-                                <view class="kj_each_ball">{{cwl_data[item + '_result'].Fblue_ball}}</view>
+                                <view class="kj_ball_list_ball_base">{{cwl_data[item + '_result'].Fblue_ball}}</view>
                                 </block>
 
 
