@@ -36,12 +36,8 @@ page{
 }
 
 .weui-tabs-bar__item{
-    width: 50%;
+    /* width: 50%; */
     text-align: center;
-}
-
-.tab-bar-title__selected{
-    width: 100%;
 }
 
 .kj_all_list_container{

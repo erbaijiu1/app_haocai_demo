@@ -3,10 +3,9 @@
         <view class="tab-content" slot="tab-content-{{index}}">
             <view wx:if="{{index == 0}}" class="kj_all_list_container">
                 <view class="kj_ball_list_container">
-                    <!-- 00000----   {{item.title}}  -->
-                    <view class="kj_ball_list_icon_container">
+                    <!-- <view class="kj_ball_list_icon_container">
                         <image src="../../img/icon/cwl_ssq.png" mode="aspectFit" class="kj_pic_icon" />
-                    </view>
+                    </view> -->
                     <view>
                         <view class="kj_ball_list_desc_text">
                             <view class="kj_ball_list_desc_text_issue">{{cwl_data.ssq_result.cn_name}} 第{{cwl_data.ssq_result.Fissue}}期</view>
@@ -22,7 +21,7 @@
                     </view>
                 </view>
                 <!-- 下面是中奖的注数及金额，中奖规则图形化展示等 -->
-                <view class="winning_detail_table">
+                <view class="winning_detail_table" hidden="{{}}">
                     <view class="winning_detail_table_header" >
                         <view class="winning_detail_table_head_cell">奖项</view>
                         <view class="winning_detail_table_head_cell">中奖规则</view>
