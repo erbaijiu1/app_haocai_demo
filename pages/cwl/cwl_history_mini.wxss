@@ -61,6 +61,9 @@ page{
     margin: 0 10px;
     /* width: 10rpx; */
 }
+.footer_button_contain{
+    padding: 20rpx 0 50rpx 0;
+}
 
 .kj_ball_list_container {
     display: flex;

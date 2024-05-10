@@ -50,50 +50,46 @@
                         <view class="kj_ball_list_icon_container">
                             <image src="../../img/icon/cwl_{{item}}.png" mode="aspectFit" class="kj_pic_icon" />
                         </view>
-                        <view>
+                        <view class="kj_ball_list_ball_issue_and_ball">
                             <view class="kj_ball_list_desc_text">
                                 <view class="kj_ball_list_desc_text_issue">{{cwl_data[item + '_result'].cn_name}} 第{{cwl_data.ssq_result.Fissue}}期</view>
                                 <view class="kj_ball_list_desc_text_open_day">{{cwl_data[item + '_result'].Fdate}}</view>
                                 <view class="kj_ball_list_desc_text_open_day">{{cwl_data[item + '_result'].open_day}}</view>
                             </view>
                             <view class="kj_ball_list">
-                                <block wx:if="{{ item === 'qlb'}}">
-                                    <!-- 这是展示前面10个的 -->
-                                    <view class="kj_ball_list_klb_row">
-                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base" wx:if="{{index < 10}}">
-                                            {{item}}
-                                        </view>
-                                    </view>
-                                    <!-- 这是展示后面10个的 -->
-                                    <view class="kj_ball_list_klb_row">
-                                        <view wx:for="{{cwl_data[item + '_result'].split_red_balls.slice(10, 20)}}" wx:key="index" class="kj_ball_list_ball_base" wx:if="{{index > 10}}">
-                                            {{item}}
-                                        </view>
+                                <block wx:if="{{ item == 'sd' }}">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                        {{red_ball}}
                                     </view>
                                 </block>
-
                                 <block wx:else="">
-                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base">
-                                        {{item}}
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                        {{red_ball}}
                                     </view>
-                                    <view class="kj_ball_list_ball_base">{{cwl_data[item + '_result'].Fblue_ball}}</view>
                                 </block>
 
-
+                                <view class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;" wx:if="{{cwl_data[item + '_result'].Fblue_ball}}">{{cwl_data[item + '_result'].Fblue_ball}}
+                                </view>
+                        
                             </view>
                         </view>
                     </view>
+
                 </block>
             </view>
         </view>
     </block>
 </mp-tabs>
 
+<!-- 广告 -->
 <view hidden="{{hidden_ad_view}}">
     <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
 </view>
-<view>
-    <button type="default" plain="true" bindtap="goToTrendPage">lishizoushi</button>
-    <button type="default" plain="true" bind:tap="goToCWLHistoryPage">查看往期</button>
-    <button type="default" plain="true" openType="share" data-fromparam="share_btn" class="share_button">share to friend</button>
+
+<!-- 底部按钮   style="padding:10px 0 25px 0;padding:8px 0 20px 0;" -->
+<view class="footer_button_contain">
+    <button bindtap="goToTrendPage" class="history_trend_btn" style="width:600rpx;">历史趋势图</button>
+    <button bind:tap="goToCWLHistoryPage" class="view_history_btn" style="width:600rpx;">查往期开奖</button>
+    <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button>
 </view>
+<custom-tab-bar wx:if="{{true}}"></custom-tab-bar>
