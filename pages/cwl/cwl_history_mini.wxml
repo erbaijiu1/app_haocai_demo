@@ -1,12 +1,12 @@
 <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
     <block wx:for="{{tabs}}" wx:key="title">
-        <view class="tab-content" slot="tab-content-{{index}}" > 
+        <scroll-view class="tab-content" slot="tab-content-{{index}}" scroll-y="true"> 
             <view>
                 <!-- 对每一行进行输出 -->
                 <view wx:for="{{cwl_data[item.sub_type].his_list}}" wx:key="index" wx:for-item="kj_type_item">
                     <view>{{kj_type_item.Fissue}}</view>
                 </view>
             </view>
-        </view>
+        </scroll-view>
     </block>
 </mp-tabs>

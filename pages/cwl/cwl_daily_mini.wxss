@@ -26,9 +26,9 @@ page{
     /* padding: 40rpx; */
 }
 
-.weui-tabs-bar__title {
-    /* margin: 0px 10px; */
-}
+/* .weui-tabs-bar__title {
+    margin: 0px 10px;
+} */
 
 .tab-bar-title__selected {
     font-size: 20px;

@@ -118,7 +118,7 @@ Page({
         if(this.data.kjContextMap[sub_type] && this.data.kjContextMap[sub_type].maxIssue){
             max_issue = this.data.kjContextMap[sub_type].maxIssue
         }
-        console.log(max_issue, this.data.kjContextMap.sub_type)
+        // console.log(max_issue, this.data.kjContextMap.sub_type)
         setTimeout(() => {
             this.getKjHistory(this.data.kj_type, sub_type, max_issue )
             wx.hideLoading();
