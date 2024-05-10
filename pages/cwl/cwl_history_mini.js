@@ -95,6 +95,7 @@ Page({
   }
 
     // 到达底部更新
+    // ,onPullDownRefresh(){
     , onReachBottom() {
         console.log("onReachBottom")
         if (!this.data.isLoading) {
@@ -125,7 +126,7 @@ Page({
             this.setData({
                 isLoading: false // 设置 isLoading 为 false
             });
-        }, 1000);
+        }, 3000);
     }
 
 
