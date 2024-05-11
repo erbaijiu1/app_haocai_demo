@@ -1,33 +1,86 @@
-// index.js
-import url_tool from '../../utils/url_tool.js';
-
-// 获取应用实例
-const app = getApp()
+// 使用封装的request方法
+const { wx_get, wx_post } = require('../../utils/wx_request.js');
 
 Page({
   data: {
-    base_web_view: app.globalData.host_name + '/cwl_daily',
-    web_view_url: app.globalData.host_name + '/cwl_daily',
-    page_url : '/pages/cwl/cwl_daily'
-  },
-  onLoad(options) {
-      var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
-      this.setData({
-        web_view_url:web_view_url
-      });
+    tabs: [],
+    activeTab: 0,
+    cwl_data:{}
+    ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
+    , hidden_ad_view: true
   }
-  ,onShareAppMessage: function (options) {
-    var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);
+  ,onLoad() {
+    const titles = ['双色球', '全部福彩']
+    const tabs = titles.map(item => ({title: item}))
+    this.setData({tabs})
 
+    this.getCwlData()
+  },
+
+  onTabCLick(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
+  },
+
+  onChange(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
+  }
+
+  ,getCwlData: function(){
+    wx_get('/hc_miniapp/get_kj_info', {'req_type':'cwl'})
+      .then(data => {
+        console.log(data)
+        this.setData({
+            cwl_data: data
+        })
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+    // 开奖趋势图
+    , goToTrendPage() {
+        wx.switchTab({
+          url: '/pages/trend/trend'
+        })
+      }
+    //   福彩开奖历史
+     , goToCWLHistoryPage() {
+        wx.navigateTo({
+          url: '/pages/cwl/cwl_history_mini'
+        })
+      }
+
+    ,onShareAppMessage: function (options) {
+        return {
+            title: '下一个彩票大奖就是你的',
+            // path: this.route
+        }
+    }
+
+    ,onShareTimeline: function () {
     return {
-      title: '下一个彩票大奖就是你',
-      path: path_url
+      title: '下一个彩票大奖就是你的',
+    //   path: this.data.page_url
     }
   }
 
-  ,onShow: function() {
-    // 在页面显示时执行刷新操作
-    var timestamp = new Date().getTime();
-    // this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
+  ,adLoad() {
+    console.log('Banner 广告加载成功')
+  },
+  adError(err) {
+    if(err.detail && err.detail.errCode !== 1004){
+        console.error('Banner 广告加载失败', err)
+    }
+    console.log('no ad show.')
+    // 关闭广告的view
+    this.setData({
+        hidden_ad_view:true
+    })
+  },
+  adClose() {
+    console.log('Banner 广告关闭')
   }
+
 })

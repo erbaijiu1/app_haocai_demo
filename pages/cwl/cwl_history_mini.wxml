@@ -9,7 +9,7 @@
 
                     <view class="kj_ball_list_container">
                         <view class="kj_ball_list_ball_issue_and_ball">
-                            <view class="kj_ball_his_detail_container">
+                            <view class="kj_ball_his_detail_container" style="width: 100%;">
                                 <view class="kj_ball_list_desc_text">
                                     <view class="kj_ball_list_desc_text_issue" style="margin-left: 4px;">第{{ball_item.Fissue}}期</view>
                                     <view class="kj_ball_list_desc_text_open_day kj_ball_list_desc_text_special_add">{{ball_item.Fdate}}</view>

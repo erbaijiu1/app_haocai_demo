@@ -1,4 +1,95 @@
-<!--cwl_daily.wxml-->
-<view>
-    <web-view src="{{web_view_url}}"></web-view>
+<mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
+    <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" slot="tab-content-{{index}}">
+            <view wx:if="{{index == 0}}" class="kj_all_list_container">
+                <view class="kj_ball_list_container">
+                    <!-- 00000----   {{item.title}}  -->
+                    <view class="kj_ball_list_icon_container">
+                        <image src="../../img/icon/cwl_ssq.png" mode="aspectFit" class="kj_pic_icon" />
+                    </view>
+                    <view class="kj_ball_list_ball_issue_and_ball">
+                        <view class="kj_ball_list_desc_text">
+                            <view class="kj_ball_list_desc_text_issue">{{cwl_data.ssq_result.cn_name}} 第{{cwl_data.ssq_result.Fissue}}期</view>
+                            <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.Fdate}}</view>
+                            <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.open_day}}</view>
+                        </view>
+                        <view class="kj_ball_list">
+                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                {{item}}
+                            </view>
+                            <view class="kj_ball_list_ball_base cwl_ball_add_blue" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">{{cwl_data.ssq_result.Fblue_ball}}</view>
+                        </view>
+                    </view>
+                </view>
+                <!-- 下面是中奖的注数及金额，中奖规则图形化展示等 -->
+                <view class="winning_detail_table">
+                    <view class="winning_detail_table_header">
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_1">奖项</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_2">中奖规则</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_3">中奖注数</view>
+                        <view class="winning_detail_table_head_cell winning_detail_table_head_4">中奖金额(元)</view>
+                    </view>
+                    <view class="winning_detail_table_body">
+                        <view class="winning_detail_table_row" wx:for="{{prizeGrades}}" wx:key="key" wx:for-index="idx">
+                            <view class="winning_detail_table_cell winning_detail_table_head_1">
+                                {{prizeGrades[idx]}}
+                            </view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_2">
+                                <image src='../../img/prize_demo/ssq_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
+                            </view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{cwl_data.ssq_result.prize_grades[idx-1].typenum}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{cwl_data.ssq_result.prize_grades[idx-1].typemoney}}</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+
+            <view wx:else="">
+                <block wx:for="{{['ssq', 'sd', 'qlc', 'qlb']}}" wx:key="item">
+                    <view class="kj_ball_list_container">
+                        <view class="kj_ball_list_icon_container">
+                            <image src="../../img/icon/cwl_{{item}}.png" mode="aspectFit" class="kj_pic_icon" />
+                        </view>
+                        <view class="kj_ball_list_ball_issue_and_ball">
+                            <view class="kj_ball_list_desc_text">
+                                <view class="kj_ball_list_desc_text_issue">{{cwl_data[item + '_result'].cn_name}} 第{{cwl_data.ssq_result.Fissue}}期</view>
+                                <view class="kj_ball_list_desc_text_open_day">{{cwl_data[item + '_result'].Fdate}}</view>
+                                <view class="kj_ball_list_desc_text_open_day">{{cwl_data[item + '_result'].open_day}}</view>
+                            </view>
+                            <view class="kj_ball_list">
+                                <block wx:if="{{ item == 'sd' }}">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                        {{red_ball}}
+                                    </view>
+                                </block>
+                                <block wx:else="">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                        {{red_ball}}
+                                    </view>
+                                </block>
+
+                                <view class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;" wx:if="{{cwl_data[item + '_result'].Fblue_ball}}">{{cwl_data[item + '_result'].Fblue_ball}}
+                                </view>
+                        
+                            </view>
+                        </view>
+                    </view>
+
+                </block>
+            </view>
+        </view>
+    </block>
+</mp-tabs>
+
+<!-- 广告 -->
+<view hidden="{{hidden_ad_view}}">
+    <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
 </view>
+
+<!-- 底部按钮   style="padding:10px 0 25px 0;padding:8px 0 20px 0;" -->
+<view class="footer_button_contain">
+    <button bindtap="goToTrendPage" class="history_trend_btn" style="width:600rpx;">历史趋势图</button>
+    <button bind:tap="goToCWLHistoryPage" class="view_history_btn" style="width:600rpx;">查往期开奖</button>
+    <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button>
+</view>
+<custom-tab-bar wx:if="{{true}}"></custom-tab-bar>
