@@ -13,7 +13,7 @@ page{
 
 .weui-tabs-swiper {
     width: 100%;
-    height: 760rpx;
+    height: 800rpx;
     background: #fff;
 }
 

@@ -7,10 +7,10 @@ Page({
     activeTab: 0,
     cwl_data:{}
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
-    ,expandStatus: {}
     ,isLoading : false
     ,kj_type:'cwl'
     ,kjContextMap:{}
+    ,detailRuleShowMap:{}
   }
   ,onLoad() {
     //   const tabs = [{title:'ball A', kj_type:'dlt'},{title:'ball B', kj_type:'pls'},{title:'ball C', kj_type:'plw'},{title:'ball D', kj_type:'qxc'}]
@@ -19,8 +19,8 @@ Page({
 
       this.getKjHistory(this.data.kj_type, '', '')
 
-      // 初始化 expandStatus 对象,将所有列表项设置为折叠状态
-      this.initExpandStatus();
+      // 初始化 expandStatus 对象,将所有列表项设置为折叠状态, 这个默认为空就行
+    //   this.initExpandStatus();
   },
 
   onListDataClick(e) {
@@ -28,17 +28,7 @@ Page({
     this.setData({
       [`expandStatus[${index}]`]: !this.data.expandStatus[index]
     });
-  },
-
-    initExpandStatus() {
-        const expandStatus = {};
-        for (const [key, _] of Object.entries(this.data.cwl_data)) {
-            expandStatus[key] = false;
-        }
-        this.setData({
-            expandStatus
-        });
-    }
+  }
 
   ,onTabCLick(e) {
     const index = e.detail.index
@@ -91,9 +81,9 @@ Page({
   }
 
     // 到达底部更新
-    ,onPullDownRefresh(){
+    ,loadMoreClick(){
     // , onReachBottom() {
-        console.log("onReachBottom")
+        console.log("loadMoreClick")
         if (!this.data.isLoading) {
             this.loadMoreData();
         }
@@ -123,6 +113,29 @@ Page({
                 isLoading: false // 设置 isLoading 为 false
             });
         }, 3000);
+    }
+
+    // 展示明细开奖规则点击
+    , showDetailClick: function (event) {
+        var clickid = event.currentTarget.dataset.clickid;
+        // console.log(clickid)
+        // 首先复制当前的 detailRuleShowMap
+        var newMap = { ...this.data.detailRuleShowMap };
+
+        // 检查 clickid 是否已存在
+        if (newMap[clickid]) {
+            // 如果已存在，删除该属性
+            delete newMap[clickid];
+        } else {
+            // 如果不存在，添加该属性并设置为 1
+            newMap[clickid] = 1;
+        }
+
+        // 更新数据
+        this.setData({
+            detailRuleShowMap: newMap
+        });
+
     }
 
 

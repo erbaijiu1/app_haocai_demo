@@ -18,7 +18,7 @@ page{
 }
 
 .tab-content {
-    /* height: 700px; */
+    height: 900rpx;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -69,7 +69,8 @@ page{
 
 
 .kj_ball_list_container {
-    display: flex;
+    /* display: flex; */
+    display: block;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
@@ -86,12 +87,15 @@ page{
 
 .kj_ball_list_ball_issue_and_ball{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .kj_ball_list_desc_text{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 10px;
 }
@@ -105,12 +109,17 @@ page{
     color: #525252;
 }
 
+.kj_ball_list_desc_text_special_add{
+    padding-left: 8px;
+}
+
 /* 中奖详情列表 */
 .winning_detail_table{
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
     background: #fff;
+    margin-top: 8px;
 }
 .winning_detail_table_header{
     display: flex;
@@ -140,7 +149,7 @@ page{
 }
 
 .winning_detail_table_cell{
-    padding: 9px 6px;
+    padding: 3px 6px;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
     text-align: center;
@@ -243,4 +252,20 @@ page{
     background: #fff; */
     /* border: #e02020 1px solid; */
     padding: 2px 0 20px 0;
+}
+
+.kj_his_detail_contral{
+    height: 50rpx;
+    width: 50rpx;
+    margin: 2px;
+}
+
+.kj_ball_his_detail_container{
+    width: 85%;
+}
+.kj_ball_his_detail_ctl_container{
+    width: 10%;
+    height: 100%;
+    margin-right: 20px;
+    margin-top: 8px;
 }
