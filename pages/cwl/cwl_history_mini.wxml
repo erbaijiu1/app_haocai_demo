@@ -3,7 +3,44 @@
         <scroll-view class="tab-content" slot="tab-content-{{index}}" scroll-y="true"> 
             <view>
                 <!-- 对每一行进行输出 -->
-                <view wx:for="{{cwl_data[item.sub_type].his_list}}" wx:key="index" wx:for-item="kj_type_item">
+                <view wx:for="{{cwl_data[item.sub_type].his_list}}" wx:key="index" wx:for-item="ball_item">
+
+
+
+                    <view class="kj_ball_list_container">
+                        <view class="kj_ball_list_ball_issue_and_ball">
+                            <view class="kj_ball_list_desc_text">
+                                <view class="kj_ball_list_desc_text_issue">第{{ball_item.Fissue}}期</view>
+                                <view class="kj_ball_list_desc_text_open_day">{{ball_item.Fdate}}</view>
+                            </view>
+                            <view class="kj_ball_list">
+                                <block wx:if="{{ item.sub_type == '3d' }}">
+                                    <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                        {{red_ball}}
+                                    </view>
+                                </block>
+                                <block wx:else="">
+                                    <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                        {{red_ball}}
+                                    </view>
+                                </block>
+
+                                <view class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('../../img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;" wx:if="{{ball_item.Fblue_ball}}">{{ball_item.Fblue_ball}}
+                                </view>
+                        
+                            </view>
+                        </view>
+                    </view>
+
+
+
+
+
+
+
+
+
+
                     <view>{{kj_type_item.Fissue}}</view>
                 </view>
             </view>

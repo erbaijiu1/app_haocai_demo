@@ -13,12 +13,8 @@ Page({
     ,kjContextMap:{}
   }
   ,onLoad() {
-    //   const titles = ['球A', '球B', '球C', '球D']
-    //   const tabs = titles.map(item => ({ title: item }))
-    //   this.setData({ tabs })
-
     //   const tabs = [{title:'ball A', kj_type:'dlt'},{title:'ball B', kj_type:'pls'},{title:'ball C', kj_type:'plw'},{title:'ball D', kj_type:'qxc'}]
-    const tabs = [{title:'ball A', sub_type:'ssq'},{title:'ball B', sub_type:'3d'},{title:'ball C', sub_type:'kl8'},{title:'ball D', sub_type:'qlc'}]
+    const tabs = [{title:'双色球', sub_type:'ssq'},{title:'福彩3D', sub_type:'3d'},{title:'七乐彩', sub_type:'qlc'},{title:'快乐8', sub_type:'kl8'}]
       this.setData({ tabs })
 
       this.getKjHistory(this.data.kj_type, '', '')
@@ -95,8 +91,8 @@ Page({
   }
 
     // 到达底部更新
-    // ,onPullDownRefresh(){
-    , onReachBottom() {
+    ,onPullDownRefresh(){
+    // , onReachBottom() {
         console.log("onReachBottom")
         if (!this.data.isLoading) {
             this.loadMoreData();
