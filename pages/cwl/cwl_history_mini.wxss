@@ -160,11 +160,13 @@ page{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bolder;
 }
 
 .winning_detail_table_cell_money{
     color: #E02020;
-    font-family: fantasy;
+    /* font-family: fantasy; */
+    font-weight: 800;
 }
 
 .winning_detail_table_row{
@@ -208,15 +210,13 @@ page{
 }
 
 .cwl_ball_add_red{
-    /* background-image: url('../../img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat; */
-    /* opacity: 0.7; */
     color: #fff;
     margin-right: 4px;
 }
 
 .cwl_ball_add_blue{
     margin-left: 18px;
-    background-image: url('../../img/icon/cwl_blueCircle.png');
+    /* background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png'); */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -269,4 +269,24 @@ page{
     height: 100%;
     margin-right: 20px;
     margin-top: 8px;
+}
+
+.winning_detail_summary_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.winning_detail_summary{
+    /* font-family: fantasy; */
+    width: 50%;
+    height: 120rpx;
+    text-align: center;
+    align-items: center;
+    border-top:#F1EDEE 1px solid;
+    padding: 10px 0 0 0;
+    font-weight: 800;
+}
+
+.desc_light_text{
+    color: #B6B6B6;
 }

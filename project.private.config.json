@@ -10,8 +10,8 @@
         "miniprogram": {
             "list": [
                 {
-                    "name": "cwl_daily_mini",
-                    "pathName": "pages/cwl/cwl_daily_mini",
+                    "name": "cwl_daily",
+                    "pathName": "pages/cwl/cwl_daily",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

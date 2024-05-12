@@ -37,3 +37,15 @@ page{
     left:52px;
 }
 /* .weui-btn{width:184px;} */
+
+/* 远程路径的背景图 */
+.red_ball_bg{
+  background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.blue_ball_bg{
+  background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

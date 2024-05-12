@@ -1,0 +1,4 @@
+<!-- footer.wxml -->
+<view class="footer_class">
+    <view>数据来源:中国体育彩票官网：https://lottery.gov.cn 中国福利彩票官网：http://www.cwl.gov.cn</view>
+</view>

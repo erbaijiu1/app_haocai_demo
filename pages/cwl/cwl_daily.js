@@ -39,7 +39,7 @@ Page({
         console.error(err)
       })
   }
-    // 开奖趋势图
+    // 开奖走势图
     , goToTrendPage() {
         wx.switchTab({
           url: '/pages/trend/trend'
