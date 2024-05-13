@@ -1,3 +1,6 @@
 {
-
+  "usingComponents": {
+    "mp-tabs": "../../components/tabs/index"
+    ,"footer": "../../components/footer/footer"
+  }
 }

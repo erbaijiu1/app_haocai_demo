@@ -82,9 +82,9 @@
 </mp-tabs>
 
 <!-- 广告 -->
-<view hidden="{{hidden_ad_view}}">
+<!-- <view hidden="{{hidden_ad_view}}">
     <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
-</view>
+</view> -->
 
 <!-- 底部按钮   style="padding:10px 0 25px 0;padding:8px 0 20px 0;" -->
 <view class="footer_button_contain">
