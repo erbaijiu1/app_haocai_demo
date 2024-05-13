@@ -2,7 +2,7 @@
     <block wx:for="{{tabs}}" wx:key="title">
         <view class="tab-content" slot="tab-content-{{index}}">
             <view wx:if="{{index == 0}}" class="kj_all_list_container">
-                <view class="kj_ball_list_container">
+                <view class="kj_ball_list_container" style="padding: 8px 0;">
                     <!-- 00000----   {{item.title}}  -->
                     <view class="kj_ball_list_icon_container">
                         <image src="../../img/icon/lottery_dlt.png" mode="aspectFit" class="kj_pic_icon" />
