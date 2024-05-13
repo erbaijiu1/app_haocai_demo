@@ -207,11 +207,16 @@ page{
 }
 
 .history_trend_btn{
-    color: #fff;
+    /* color: #fff;
     background: #E02020;
     border: none;
     margin: 20rpx 0;
-    /* border-radius: 8rpx; 調整圓角大小 */
+    font-weight: normal;
+    padding: 5px 24px; */
+    color: #E02020;
+    background: #fff;
+    border: #e02020 1px solid;
+    margin: 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
 }
@@ -225,9 +230,15 @@ page{
 }
 
 .share_button{
-    color: #E02020;
+    /* color: #E02020;
     background: #fff;
     border: #e02020 1px solid;
+    margin: 20rpx 0;
+    font-weight: normal;
+    padding: 5px 24px; */
+    color: #fff;
+    background: #E02020;
+    border: none;
     margin: 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
