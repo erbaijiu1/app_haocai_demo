@@ -10,7 +10,7 @@
                     <view class="kj_ball_list_ball_issue_and_ball">
                         <view class="kj_ball_list_desc_text">
                             <view class="kj_ball_list_desc_text_issue">{{lottery_data[main_type + '_result'].cn_name}}  第{{lottery_data[main_type + '_result'].Fissue}}期</view>
-                            <view class="kj_ball_list_desc_text_open_day">{{lottery_data[main_type + '_result'].Fdate}}</view>
+                            <view class="kj_ball_list_desc_text_open_day">{{lottery_data[main_type + '_result'].date_week}}</view>
                             <view class="kj_ball_list_desc_text_open_day">{{lottery_data[main_type + '_result'].open_day}}</view>
                         </view>
                         <view class="kj_ball_list">
@@ -38,42 +38,35 @@
                                 {{prizeGrades[idx]}}
                             </view>
                             <view class="winning_detail_table_cell winning_detail_table_head_2">
-                                <image src='../../img/prize_demo/ssq_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
+                                <image src='../../img/prize_demo/{{main_type}}_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
                             </view>
-                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{lottery_data.ssq_result.prize_grades[idx-1].typenum}}</view>
-                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{lottery_data.ssq_result.prize_grades[idx-1].typemoney}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{lottery_data[main_type+'_result'].prize_grades[idx-1].stakeCount}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{lottery_data[main_type+'_result'].prize_grades[idx-1].stakeAmount}}</view>
                         </view>
                     </view>
                 </view>
             </view>
 
-            <view wx:else="">
-                <block wx:for="{{['ssq', 'sd', 'qlc', 'qlb']}}" wx:key="item">
+            <view wx:else="" style="width: 100%;">
+                <block wx:for="{{['dlt', 'pls', 'plw', 'qxc']}}" wx:key="item">
                     <view class="kj_ball_list_container">
                         <view class="kj_ball_list_icon_container">
-                            <image src="../../img/icon/cwl_{{item}}.png" mode="aspectFit" class="kj_pic_icon" />
+                            <image src="../../img/icon/lottery_{{item}}.png" mode="aspectFit" class="kj_pic_icon" />
                         </view>
                         <view class="kj_ball_list_ball_issue_and_ball">
                             <view class="kj_ball_list_desc_text">
                                 <view class="kj_ball_list_desc_text_issue">{{lottery_data[item + '_result'].cn_name}} 第{{lottery_data[item + '_result'].Fissue}}期</view>
-                                <view class="kj_ball_list_desc_text_open_day">{{lottery_data[item + '_result'].Fdate}}</view>
+                                <view class="kj_ball_list_desc_text_open_day">{{lottery_data[item + '_result'].date_week}}</view>
                                 <view class="kj_ball_list_desc_text_open_day">{{lottery_data[item + '_result'].open_day}}</view>
                             </view>
                             <view class="kj_ball_list">
-                                <block wx:if="{{ item == 'sd' }}">
-                                    <view wx:for="{{lottery_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg" >
-                                        {{red_ball}}
-                                    </view>
-                                </block>
-                                <block wx:else="">
-                                    <view wx:for="{{lottery_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
-                                        {{red_ball}}
-                                    </view>
-                                </block>
-
-                                <view class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg" wx:if="{{lottery_data[item + '_result'].Fblue_ball}}">{{lottery_data[item + '_result'].Fblue_ball}}
-                                </view>
-                        
+                              <view wx:for="{{lottery_data[item+'_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red {{ item=='dlt' || item=='qxc' ? 'blue_ball_bg':'red_ball_bg'  }}">
+                                {{red_ball}}
+                              </view>
+                              
+                              <view wx:for="{{lottery_data[item+'_result'].split_bule_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
+                                {{red_ball}}
+                              </view>
                             </view>
                         </view>
                     </view>

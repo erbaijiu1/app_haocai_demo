@@ -14,7 +14,7 @@ App({
     },
     globalData: {
         host_name:"https://www.yjhcai.cn"
-        // host_name:"http://127.0.0.1:5000"
+        // host_name:"http://127.0.0.1:8000"
     }
 
     /* 

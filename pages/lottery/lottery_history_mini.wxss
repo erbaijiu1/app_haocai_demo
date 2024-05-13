@@ -13,12 +13,12 @@ page{
 
 .weui-tabs-swiper {
     width: 100%;
-    height: 800rpx;
-    background: #fff;
+    height: 1400rpx;
+    background: #F1EDEE;
 }
 
 .tab-content {
-    /* height: 700px; */
+    height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -26,6 +26,8 @@ page{
     box-sizing: border-box;
     /* padding: 40rpx; */
     background: #F1EDEE;
+    margin-top: 8px;
+    padding: 0 0 30px 0;
 }
 
 /* .weui-tabs-bar__title {
@@ -38,12 +40,12 @@ page{
 }
 
 .weui-tabs-bar__item{
-    width: 50%;
+    width: 25%;
     text-align: center;
 }
 
 .tab-bar-title__selected{
-    width: 100%;
+    /* width: 100%; */
     color: #e02020;
 }
 
@@ -68,13 +70,15 @@ page{
 
 
 .kj_ball_list_container {
-    display: flex;
+    /* display: flex; */
+    display: block;
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
     background-color: #fff;
-    margin: 8px 0 0 0;
-    padding: 14px 0;
+    /* margin: 8px 0; */
+    padding: 8px 0;
+    border-bottom: #ccc 1px solid;
 }
 
 .kj_ball_list_icon_container{
@@ -84,12 +88,15 @@ page{
 
 .kj_ball_list_ball_issue_and_ball{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .kj_ball_list_desc_text{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 10px;
 }
@@ -103,12 +110,17 @@ page{
     color: #525252;
 }
 
+.kj_ball_list_desc_text_special_add{
+    padding-left: 8px;
+}
+
 /* 中奖详情列表 */
 .winning_detail_table{
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
     background: #fff;
+    margin-top: 8px;
 }
 .winning_detail_table_header{
     display: flex;
@@ -138,7 +150,7 @@ page{
 }
 
 .winning_detail_table_cell{
-    padding: 4px 10px;
+    padding: 3px 6px;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
     text-align: center;
@@ -148,6 +160,7 @@ page{
     display: flex;
     align-items: center;
     justify-content: center;
+    font-weight: bolder;
 }
 
 .winning_detail_table_cell_money{
@@ -199,24 +212,21 @@ page{
 .cwl_ball_add_red{
     color: #fff;
     margin-right: 4px;
-
 }
 
 .cwl_ball_add_blue{
     margin-left: 18px;
+    /* background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png'); */
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .history_trend_btn{
-    /* color: #fff;
+    color: #fff;
     background: #E02020;
     border: none;
     margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px; */
-    color: #E02020;
-    background: #fff;
-    border: #e02020 1px solid;
-    margin: 20rpx 0;
+    /* border-radius: 8rpx; 調整圓角大小 */
     font-weight: normal;
     padding: 5px 24px;
 }
@@ -230,15 +240,9 @@ page{
 }
 
 .share_button{
-    /* color: #E02020;
+    color: #E02020;
     background: #fff;
     border: #e02020 1px solid;
-    margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px; */
-    color: #fff;
-    background: #E02020;
-    border: none;
     margin: 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
@@ -249,4 +253,40 @@ page{
     background: #fff; */
     /* border: #e02020 1px solid; */
     padding: 2px 0 20px 0;
+}
+
+.kj_his_detail_contral{
+    height: 50rpx;
+    width: 50rpx;
+    margin: 2px;
+}
+
+.kj_ball_his_detail_container{
+    width: 85%;
+}
+.kj_ball_his_detail_ctl_container{
+    width: 10%;
+    height: 100%;
+    margin-right: 20px;
+    margin-top: 8px;
+}
+
+.winning_detail_summary_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.winning_detail_summary{
+    /* font-family: fantasy; */
+    width: 50%;
+    height: 120rpx;
+    text-align: center;
+    align-items: center;
+    border-top:#F1EDEE 1px solid;
+    padding: 10px 0 0 0;
+    font-weight: 800;
+}
+
+.desc_light_text{
+    color: #B6B6B6;
 }

@@ -2,20 +2,13 @@
     "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
     "projectname": "app_haocai_demo",
     "setting": {
-        "compileHotReLoad": true,
+        "compileHotReLoad": false,
         "urlCheck": false,
         "preloadBackgroundData": false
     },
     "condition": {
         "miniprogram": {
             "list": [
-                {
-                    "name": "pages/lottery/lottery_daily",
-                    "pathName": "pages/lottery/lottery_daily",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
                 {
                     "name": "index",
                     "pathName": "pages/index/index",
@@ -24,15 +17,22 @@
                     "scene": null
                 },
                 {
-                    "name": "cwl_daily",
-                    "pathName": "pages/cwl/cwl_daily",
+                    "name": "lottery_history_mini",
+                    "pathName": "pages/lottery/lottery_history_mini",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
                 },
                 {
-                    "name": "pages/cwl/cwl_history_mini",
-                    "pathName": "pages/cwl/cwl_history_mini",
+                    "name": "pages/lottery/lottery_daily",
+                    "pathName": "pages/lottery/lottery_daily",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "cwl_daily",
+                    "pathName": "pages/cwl/cwl_daily",
                     "query": "",
                     "launchMode": "default",
                     "scene": null

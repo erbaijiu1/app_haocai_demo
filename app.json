@@ -9,6 +9,7 @@
     ,"pages/trend/trend"
     ,"pages/cwl/tabs"
     ,"pages/cwl/cwl_history_mini"
+    ,"pages/lottery/lottery_history_mini"
   ],
   
   "window":{

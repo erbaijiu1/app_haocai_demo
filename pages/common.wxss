@@ -49,3 +49,8 @@ page{
   background-size: cover;
   background-repeat: no-repeat;
 }
+.yellow_ball_bg{
+  background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_orange.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}

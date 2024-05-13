@@ -1,0 +1,89 @@
+<mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
+    <block wx:for="{{tabs}}" wx:key="title">
+        <scroll-view class="tab-content" slot="tab-content-{{index}}" scroll-y="true"> 
+            <view>
+                <!-- 对每一行进行输出 -->
+                <view wx:for="{{lottery_data[item.sub_type].his_list}}" wx:key="index" wx:for-item="ball_item">
+
+                    <view class="kj_ball_list_container">
+                        <view class="kj_ball_list_ball_issue_and_ball">
+                            <view class="kj_ball_his_detail_container" style="width: 100%;">
+                                <view class="kj_ball_list_desc_text">
+                                    <view class="kj_ball_list_desc_text_issue" style="margin-left: 4px;">第{{ball_item.Fissue}}期</view>
+                                    <view class="kj_ball_list_desc_text_open_day kj_ball_list_desc_text_special_add">{{ball_item.date_week}}</view>
+                                </view>
+                                <view class="kj_ball_list">
+                                  <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red {{ item.sub_type=='dlt' || item.sub_type=='qxc' ? 'blue_ball_bg':'red_ball_bg'  }}">
+                                    {{red_ball}}
+                                  </view>
+                                  
+                                  <view wx:for="{{ball_item.split_bule_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
+                                    {{red_ball}}
+                                  </view>
+                                    <!-- <block wx:if="{{ item.sub_type == '3d' }}">
+                                        <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
+                                            {{red_ball}}
+                                        </view>
+                                    </block>
+                                    <block wx:else="">
+                                        <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                            {{red_ball}}
+                                        </view>
+                                    </block>
+                        
+                                    <view class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg" wx:if="{{ball_item.Fblue_ball}}">{{ball_item.Fblue_ball}}
+                                    </view> -->
+                        
+                                </view>
+                            </view>
+                        
+                            <!-- 是否展示开奖规则的图标 -->
+                            <view class="kj_ball_his_detail_ctl_container" bind:tap="showDetailClick" data-clickid="{{item.sub_type + '_' + ball_item.Fissue}}" hidden="{{item.sub_type === 'dlt' ? false:true}}">
+                                <image mode="scaleToFill" src="{{detailRuleShowMap[item.sub_type + '_' + ball_item.Fissue] ? '../../img/icon/comm/circle_up.png' : '../../img/icon/comm/circle_down.png'}}" class="kj_his_detail_contral"></image>
+                            </view>
+                        </view>
+                        
+                        <!-- 这里加上规则的展示，在需要展示的时候 -->
+                        <!-- 下面是中奖的注数及金额，中奖规则图形化展示等 -->
+                        <view class="winning_detail_table" hidden="{{detailRuleShowMap[item.sub_type + '_' + ball_item.Fissue] ? false:true}}">
+                            <view class="winning_detail_summary_container">
+                                <view class="winning_detail_summary">
+                                    <view>{{ball_item.Fsales}}</view>
+                                    <view class="desc_light_text">本期销售(元)</view>
+                                </view>
+                                <view class="winning_detail_summary">
+                                    <view>{{ball_item.Fpool_money}}</view>
+                                    <view class="desc_light_text">奖池滚动(元)</view>  
+                                </view>
+                            </view>
+                            <view class="winning_detail_table_header">
+                                <view class="winning_detail_table_head_cell winning_detail_table_head_1">奖项</view>
+                                <view class="winning_detail_table_head_cell winning_detail_table_head_2">中奖规则</view>
+                                <view class="winning_detail_table_head_cell winning_detail_table_head_3">中奖注数</view>
+                                <view class="winning_detail_table_head_cell winning_detail_table_head_4">中奖金额(元)</view>
+                            </view>
+                            <view class="winning_detail_table_body">
+                                <view class="winning_detail_table_row" wx:for="{{prizeGrades}}" wx:key="key" wx:for-index="idx">
+                                    <view class="winning_detail_table_cell winning_detail_table_head_1">
+                                        {{prizeGrades[idx]}}
+                                    </view>
+                                    <view class="winning_detail_table_cell winning_detail_table_head_2">
+                                        <image src='../../img/prize_demo/dlt_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
+                                    </view>
+                                    <view class="winning_detail_table_cell winning_detail_table_head_3">{{ball_item.prize_grades[idx-1].stakeCount}}</view>
+                                    <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{ball_item.prize_grades[idx-1].stakeAmount}}</view>
+                                </view>
+                            </view>
+                        </view>
+
+                    </view>
+
+                </view>
+
+                <!-- 这个是加载更多按钮 -->
+                <button bind:tap="loadMoreClick" class="view_history_btn" style="width:600rpx;">加载更多</button>
+
+            </view>
+        </scroll-view>
+    </block>
+</mp-tabs>

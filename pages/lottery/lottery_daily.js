@@ -6,7 +6,7 @@ Page({
     tabs: [],
     activeTab: 0,
     lottery_data:{}
-    ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖',7:'七等奖',8:'八等奖',9:'9等奖'}
+    ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖',7:'七等奖',8:'八等奖',9:'九等奖'}
     , hidden_ad_view: true
 
     ,main_type : 'dlt'
@@ -16,7 +16,7 @@ Page({
     const tabs = titles.map(item => ({title: item}))
     this.setData({tabs})
 
-    this.getCwlData()
+    this.getDailyData()
   },
 
   onTabCLick(e) {
@@ -29,7 +29,7 @@ Page({
     this.setData({activeTab: index})
   }
 
-  ,getCwlData: function(){
+  ,getDailyData: function(){
     wx_get('/hc_miniapp/get_kj_info', {'req_type':'lottery'})
       .then(data => {
         console.log(data)
@@ -47,10 +47,10 @@ Page({
           url: '/pages/trend/trend'
         })
       }
-    //   福彩开奖历史
+    //   体彩开奖历史
      , goToCWLHistoryPage() {
         wx.navigateTo({
-          url: '/pages/cwl/cwl_history_mini'
+          url: '/pages/lottery/lottery_history_mini'
         })
       }
 
