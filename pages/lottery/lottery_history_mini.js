@@ -42,7 +42,7 @@ Page({
   ,getKjHistory: function(kj_type, sub_type, max_issue){
     wx_get('/hc_miniapp/get_kj_history', {'kj_type':kj_type, 'sub_type':sub_type, 'max_issue':max_issue})
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setData({
             // lottery_data: data
         })

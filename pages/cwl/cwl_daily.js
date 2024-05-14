@@ -36,7 +36,7 @@ Page({
   ,getCwlData: function(){
     wx_get('/hc_miniapp/get_kj_info', {'req_type':'cwl'})
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setData({
             cwl_data: data
         })

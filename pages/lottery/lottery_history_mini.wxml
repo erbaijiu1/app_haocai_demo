@@ -70,8 +70,12 @@
                                     <view class="winning_detail_table_cell winning_detail_table_head_2">
                                         <image src='../../img/prize_demo/dlt_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
                                     </view>
-                                    <view class="winning_detail_table_cell winning_detail_table_head_3">{{ball_item.prize_grades[idx-1].stakeCount}}</view>
-                                    <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{ball_item.prize_grades[idx-1].stakeAmount}}</view>
+                                    <view class="winning_detail_table_cell winning_detail_table_head_3">{{ball_item.prize_grades[idx-1].stakeCount?ball_item.prize_grades[idx-1].stakeCount:'--'}}</view>
+                                    <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">
+                                        {{ball_item.prize_grades[idx-1].stakeAmount?ball_item.prize_grades[idx-1].stakeAmount:
+                                            (idx==3?'10,000':(idx==4?'3,000':(idx==5?300:(idx==6?200:(idx==7?100:(idx==8?15:(idx==9?5:'--')))))) )
+                                        }}
+                                    </view>
                                 </view>
                             </view>
                         </view>

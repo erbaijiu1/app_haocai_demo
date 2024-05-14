@@ -40,8 +40,14 @@
                             <view class="winning_detail_table_cell winning_detail_table_head_2">
                                 <image src='../../img/prize_demo/{{main_type}}_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
                             </view>
-                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{lottery_data[main_type+'_result'].prize_grades[idx-1].stakeCount}}</view>
-                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{lottery_data[main_type+'_result'].prize_grades[idx-1].stakeAmount}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_3">
+                                {{lottery_data[main_type+'_result'].prize_grades[idx-1].stakeCount?lottery_data[main_type+'_result'].prize_grades[idx-1].stakeCount:'--'}}
+                            </view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">
+                                {{lottery_data[main_type+'_result'].prize_grades[idx-1].stakeAmount?lottery_data[main_type+'_result'].prize_grades[idx-1].stakeAmount:
+                                    (idx==3?'10,000':(idx==4?'3,000':(idx==5?300:(idx==6?200:(idx==7?100:(idx==8?15:(idx==9?5:'--')))))) )
+                                }}
+                            </view>
                         </view>
                     </view>
                 </view>

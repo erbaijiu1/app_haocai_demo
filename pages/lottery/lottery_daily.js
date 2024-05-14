@@ -38,7 +38,7 @@ Page({
   ,getDailyData: function(){
     wx_get('/hc_miniapp/get_kj_info', {'req_type':'lottery'})
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setData({
             lottery_data: data
         })

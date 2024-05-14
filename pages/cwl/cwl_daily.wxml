@@ -37,8 +37,15 @@
                             <view class="winning_detail_table_cell winning_detail_table_head_2">
                                 <image src='../../img/prize_demo/ssq_prize_{{idx}}.png' mode="widthFix" class="kj_ball_list_prize_demo_pic"></image>
                             </view>
-                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{cwl_data.ssq_result.prize_grades[idx-1].typenum}}</view>
-                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">{{cwl_data.ssq_result.prize_grades[idx-1].typemoney}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_3">{{cwl_data.ssq_result.prize_grades[idx-1].typenum?cwl_data.ssq_result.prize_grades[idx-1].typenum:'--'}}</view>
+                            <view class="winning_detail_table_cell winning_detail_table_head_4 winning_detail_table_cell_money">
+                                {{cwl_data.ssq_result.prize_grades[idx-1].typemoney?cwl_data.ssq_result.prize_grades[idx-1].typemoney: 
+                                (idx==3?'3,000':
+                                    (idx==4?200:(idx==5?10:(idx==6?5:'--'))
+                                    ) 
+                                )
+                                }}
+                            </view>
                         </view>
                     </view>
                 </view>
