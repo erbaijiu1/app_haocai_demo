@@ -11,12 +11,18 @@ Page({
 
     ,main_type : 'dlt'
   }
-  ,onLoad() {
-    const titles = ['超级大乐透', '全部体彩']
-    const tabs = titles.map(item => ({title: item}))
-    this.setData({tabs})
+  ,onLoad(options) {
+      const titles = ['超级大乐透', '全部体彩']
+      const tabs = titles.map(item => ({ title: item }))
+      this.setData({ tabs })
 
-    this.getDailyData()
+      this.getDailyData()
+
+      if (options.activeTab) {
+          this.setData({
+              activeTab: parseInt(options.activeTab, 10)
+          });
+      }
   },
 
   onTabCLick(e) {

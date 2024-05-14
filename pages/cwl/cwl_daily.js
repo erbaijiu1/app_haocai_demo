@@ -9,12 +9,18 @@ Page({
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
     , hidden_ad_view: true
   }
-  ,onLoad() {
+  ,onLoad(options) {
     const titles = ['双色球', '全部福彩']
     const tabs = titles.map(item => ({title: item}))
     this.setData({tabs})
 
     this.getCwlData()
+
+    if (options.activeTab) {
+        this.setData({
+            activeTab: parseInt(options.activeTab, 10)
+        });
+    }
   },
 
   onTabCLick(e) {

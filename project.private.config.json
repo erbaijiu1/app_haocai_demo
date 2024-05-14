@@ -10,6 +10,20 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/lottery/lottery_daily",
+                    "pathName": "pages/lottery/lottery_daily",
+                    "query": "activeTab=1",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "pages/training/lottery_daily",
+                    "pathName": "pages/training/lottery_daily",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "index",
                     "pathName": "pages/index/index",
                     "query": "token=dev.conf_1000e37ec6b24d19bbae6688e58e10f3&login_id=1&redirect_url=https%253A%252F%252Fwww.yjhcai.cn%252Findex",
@@ -19,13 +33,6 @@
                 {
                     "name": "lottery_history_mini",
                     "pathName": "pages/lottery/lottery_history_mini",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "pages/lottery/lottery_daily",
-                    "pathName": "pages/lottery/lottery_daily",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
@@ -43,13 +50,6 @@
                     "query": "",
                     "launchMode": "default",
                     "scene": 1017
-                },
-                {
-                    "name": "",
-                    "pathName": "pages/training/training",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
                 }
             ]
         }
