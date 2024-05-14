@@ -86,6 +86,11 @@
 
                 <!-- 这个是加载更多按钮 -->
                 <button bind:tap="loadMoreClick" class="view_history_btn" style="width:600rpx;">加载更多</button>
+                
+                <view>
+                    <!-- 页面内容 -->
+                    <footer></footer>
+                </view>
 
             </view>
         </scroll-view>
