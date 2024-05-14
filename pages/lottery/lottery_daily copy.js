@@ -19,7 +19,7 @@ Page({
   ,onShareAppMessage: function (options) {
     var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);
     return {
-      title: '下一个彩票大奖就是你',
+      title: '最新彩票开奖结果和中奖规则',
       path: path_url
     }
   }

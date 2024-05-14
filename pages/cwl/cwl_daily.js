@@ -54,14 +54,14 @@ Page({
 
     ,onShareAppMessage: function (options) {
         return {
-            title: '下一个彩票大奖就是你的',
+            title: '最新彩票开奖结果和中奖规则',
             // path: this.route
         }
     }
 
     ,onShareTimeline: function () {
     return {
-      title: '下一个彩票大奖就是你的',
+      title: '最新彩票开奖结果和中奖规则',
     //   path: this.data.page_url
     }
   }

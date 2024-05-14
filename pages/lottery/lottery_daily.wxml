@@ -14,11 +14,11 @@
                             <view class="kj_ball_list_desc_text_open_day">{{lottery_data[main_type + '_result'].open_day}}</view>
                         </view>
                         <view class="kj_ball_list">
-                            <view wx:for="{{lottery_data[main_type+'_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red red_ball_bg">
+                            <view wx:for="{{lottery_data[main_type+'_result'].split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
                                 {{item}}
                             </view>
 
-                            <view wx:for="{{lottery_data[main_type+'_result'].split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
+                            <view wx:for="{{lottery_data[main_type+'_result'].split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
                                 {{item}}
                             </view>
                         </view>
