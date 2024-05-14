@@ -61,6 +61,7 @@ Page({
     ,onShareAppMessage: function (options) {
         return {
             title: '最新彩票开奖结果和中奖规则',
+            path: '/pages/cwl/cwl_daily?activeTab='+this.data.activeTab
             // path: this.route
         }
     }
@@ -68,6 +69,7 @@ Page({
     ,onShareTimeline: function () {
     return {
       title: '最新彩票开奖结果和中奖规则',
+      path: '/pages/cwl/cwl_daily?activeTab='+this.data.activeTab
     //   path: this.data.page_url
     }
   }
