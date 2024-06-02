@@ -1,19 +1,92 @@
-<!--index.wxml-->
-<view>
-  <web-view src="{{web_view_url}}"></web-view>
-   <!--
-  <official-account></official-account>
-</view>
-
-<view class="tip-wraper">
-  <image class="tip-gif" 
-  mode="widthFix" 
-  src="/img/add_to_app_tip.gif"></image>
+<!-- pages/home/home.wxml -->
+<view class="header">
+    <view class="greeting">
+        <text >{{index_data['greeting']}}追梦人</text>
+    </view>
+    <view class="blessing_container">
+        <text>{{index_data.blessing}}</text>
+    </view>
+  </view>
   
- 
-  <image bindtap="closeTip"
-  class="tip-close" 
-  src='./images/close.png'></image>
-  -->
+
+<!-- <view class="latest-draw">
+    <text>最新开奖，祝你好运</text>
+</view> -->
+
+
+<view class="kj_all_list_container change_bg_white">
+    <view class="kj_ball_list_container add_same_container">
+        <view class="kj_ball_list_icon_container" style="margin-left: 15px;">
+            <image src="../../img/icon/cwl_ssq.png" mode="aspectFit" class="kj_pic_icon" />
+        </view>
+        <view class="kj_ball_list_ball_issue_and_ball">
+            <view class="kj_ball_list_desc_text">
+                <view class="kj_ball_list_desc_text_issue">{{index_data.ssq.cn_name}} 第{{index_data.ssq.Fissue}}期</view>
+                <view class="kj_ball_list_desc_text_open_day">{{index_data.ssq.Fdate}}</view>
+                <view class="kj_ball_list_desc_text_open_day">{{index_data.ssq.open_day}}</view>
+            </view>
+            <view class="kj_ball_list">
+                <view wx:for="{{index_data.ssq.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                    {{item}}
+                </view>
+                <view class="kj_ball_list_ball_base blue_ball_bg">{{index_data.ssq.Fblue_ball}}</view>
+            </view>
+            <view class="button_flex">
+
+        <view bindtap="SwitchMoreCwlPage" class="history_trend_btn button_length_control">
+            更多福彩</view>
+        <view bind:tap="SwitchCwlPage" class="view_history_btn button_length_control">中奖详情</view>
+        <view bindtap="currSwitchTrendPage" class="history_trend_btn button_length_control add_main_color">历史走势图</view>
+    </view>
+        </view>
+    </view>
+
+
 </view>
 
+<view class="kj_all_list_container change_bg_white">
+    <view class="kj_ball_list_container add_same_container">
+        <view class="kj_ball_list_icon_container" style="margin-left: 15px;">
+            <image src="../../img/icon/lottery_dlt.png" mode="aspectFit" class="kj_pic_icon" />
+        </view>
+        <view class="kj_ball_list_ball_issue_and_ball">
+            <view class="kj_ball_list_desc_text">
+                <view class="kj_ball_list_desc_text_issue">{{index_data.dlt.cn_name}} 第{{index_data.dlt.Fissue}}期</view>
+                <view class="kj_ball_list_desc_text_open_day">{{index_data.dlt.Fdate}}</view>
+                <view class="kj_ball_list_desc_text_open_day">{{index_data.dlt.open_day}}</view>
+            </view>
+            <view class="kj_ball_list">
+                <view wx:for="{{index_data.dlt.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
+                    {{item}}
+                </view>
+                <!-- <view class="kj_ball_list_ball_base cwl_ball_add_blue blue_ball_bg">{{index_data.dlt.Fblue_ball}}</view> -->
+                <view wx:for="{{index_data.dlt.split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
+                                {{item}}
+                </view>
+            </view>
+            <view class="button_flex">
+        <view bindtap="SwitchMoreLotteryPage" class="history_trend_btn button_length_control">
+            更多体彩</view>
+        <view bind:tap="SwitchLotteryPage" class="view_history_btn button_length_control">中奖详情</view>
+        <view bindtap="currSwitchTrendPage" class="history_trend_btn button_length_control add_main_color">历史走势图</view>
+    </view>
+        </view>
+    </view>
+
+
+</view>
+
+<view class="subs_free_container">
+    <view bind:tap="SwithToSubsMain" class="view_history_btn add_main_color modify_subs_free_size"  style="margin: 2px 0;">免费订阅微信提醒</view>
+</view>
+
+
+<view>
+    <!-- 页面底部内容 -->
+    <footer></footer>
+</view>
+
+<!-- 广告 -->
+<view hidden="{{hidden_ad_view}}" class="ad_container">
+    <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+</view>

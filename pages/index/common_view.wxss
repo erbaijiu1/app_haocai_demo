@@ -1,0 +1,9 @@
+/**index.wxss**/
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.tip-gif{
+    z-index: 1000;
+}

@@ -1,9 +1,188 @@
-/**index.wxss**/
+/* pages/home/home.wxss */
 
-.usermotto {
-  margin-top: 200px;
+@import '../common.wxss';
+
+.button_flex{
+    display: flex;
+    justify-content: space-between;
+    padding: 2px 0 4px 0;
 }
 
-.tip-gif{
-    z-index: 1000;
+.button_length_control{
+    width: 25%;
+    padding: 0px 2px;
+    font-size: 12px;
+    margin: 4px 8px;
+
+    border-radius: 10px; /* 设置圆角半径 */
+    text-align: center; /* 水平居中对齐 */
+    display: flex;
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
 }
+
+.add_same_container{
+    padding: 8px 0 0 0;
+    margin: 0 0 0 0;
+}
+
+.add_main_color{
+    /* background-color: #E02020;     */
+    background-color: #D85E5B;
+    color: #fff;
+}
+
+.change_bg_white{
+    background: #fff;
+    margin: 10px 0 0 0;
+}
+
+
+.blessing_container{
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0 0 0;
+    text-align: left;
+    font-size: 14px;
+    color: #444;
+}
+
+.subs_free_container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 20px 0px 0 0;
+}
+
+.modify_subs_free_size{
+    border-radius: 10px; /* 设置圆角半径 */
+    text-align: center; /* 水平居中对齐 */
+    display: flex;
+    justify-content: center; /* 水平居中对齐 */
+    align-items: center; /* 垂直居中对齐 */
+    width: 75%;
+    padding: 2px 5px;
+    font-size: 17px;
+}
+
+
+.ad_container{
+    margin: 40px 0 0 0;
+}
+
+
+  .header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .greeting {
+    margin: 0 0 5px 0;
+    color: #e02020;
+    background: #fff;
+    border-bottom: #e74c3c solid 1px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .quote {
+    margin: 10px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  .latest-draw {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .title {
+    /* font-size: 16px; */
+    /* font-weight: bold; */
+    /* margin-bottom: 10px; */
+  }
+  
+  .lottery {
+    margin-bottom: 20px;
+  }
+  
+  .lottery-name {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .draw-date {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  
+  .numbers {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .number {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    text-align: center;
+    border-radius: 50%;
+    margin-right: 4px;
+    font-size: 14px;
+  }
+  
+  .number.red {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .number.blue {
+    background-color: #3498db;
+    color: white;
+  }
+  
+  .number.gold {
+    background-color: #f1c40f;
+    color: white;
+  }
+  
+  .btn {
+    margin-right: 10px;
+  }
+  
+  .more, .trends, .subscribe {
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px 10px;
+  }
+  
+  .footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7e7e7;
+  }
+  
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .tab image {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .tab text {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  

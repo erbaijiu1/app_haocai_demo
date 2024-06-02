@@ -41,7 +41,31 @@ function setWebviewUrl(options, web_view_url){
 
 }
 
+function goToMoreCwlPage(){
+
+}
+
+// 开奖走势图
+function switchTrendPage() {
+    wx.switchTab({
+        url: '/pages/trend/trend'
+    })
+}
+// 开奖走势图
+function switchPage(url, params) {
+
+    if(params){
+        const app = getApp();
+        app.globalData = params;
+    }
+    wx.switchTab({
+        url: url
+    })
+}
+
 module.exports = {
     genShareInfo: genShareInfo,
-    setWebviewUrl:setWebviewUrl
+    setWebviewUrl:setWebviewUrl,
+    switchTrendPage:switchTrendPage
+    ,switchPage:switchPage
 };

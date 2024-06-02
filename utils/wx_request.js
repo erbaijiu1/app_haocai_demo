@@ -3,6 +3,9 @@ const baseUrl = 'https://yjhcai.cn'; // 设置API的基础路径
 // const baseUrl = 'http://127.0.0.1:8000'; // 设置API的基础路径
 
 const wx_request = (url, method, data, header = {}) => {
+    if(data){
+        data['version'] = '0.1.3'
+    }
   return new Promise((resolve, reject) => {
     wx.request({
       url: baseUrl + url, // 拼接完整的url

@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view>
+  <web-view src="{{web_view_url}}"></web-view>
+</view>
+

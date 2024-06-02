@@ -47,61 +47,7 @@ page{
     color: #e02020;
 }
 
-.kj_all_list_container{
-    height: 100%;
-    width: 100%;
-    background: #F1EDEE;
-}
-.kj_pic_icon{
-    width: 100rpx;
-    height: 100rpx;
-}
 
-.kj_ball_list{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 0 8px;
-}
-
-
-.kj_ball_list_container {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #fff;
-    margin: 8px 0 0 0;
-    padding: 14px 0;
-}
-
-.kj_ball_list_icon_container{
-    height: 100rpx;
-    margin: 5px;
-}
-
-.kj_ball_list_ball_issue_and_ball{
-    width: 100%;
-}
-
-.kj_ball_list_desc_text{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 10px;
-}
-.kj_ball_list_desc_text_issue{
-    font-size: 12px;
-    color: #4a4a4a;
-    font-weight: bold; /* 让文字加粗 */
-}
-.kj_ball_list_desc_text_open_day{
-    font-size: 12px;
-    color: #525252;
-}
 
 /* 中奖详情列表 */
 .winning_detail_table{
@@ -177,77 +123,6 @@ page{
     width: auto;
 }
 
-/* 彩球的样式 */
-.kj_ball_list_ball_base{
-    /* background-color: #6490EF;
-    */
-    font-size: 15px;
-    /* border-radius: 100%; */
-    display: inline-block;
-
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-
-    vertical-align: middle;
-    text-align: center;
-    display: inline-block;
-    padding: 2px 0px;
-    margin: 2px; 
-    color: #fff;
-}
-
-.cwl_ball_add_red{
-    color: #fff;
-    margin-right: 4px;
-
-}
-
-.cwl_ball_add_blue{
-    margin-left: 18px;
-}
-
-.history_trend_btn{
-    /* color: #fff;
-    background: #E02020;
-    border: none;
-    margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px; */
-    color: #E02020;
-    background: #fff;
-    border: #e02020 1px solid;
-    margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px;
-}
-.view_history_btn{
-    color: #E02020;
-    background: #fff;
-    border: #e02020 1px solid;
-    margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px;
-}
-
-.share_button{
-    /* color: #E02020;
-    background: #fff;
-    border: #e02020 1px solid;
-    margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px; */
-    color: #fff;
-    background: #E02020;
-    border: none;
-    margin: 20rpx 0;
-    font-weight: normal;
-    padding: 5px 24px;
-}
-
 .footer_button_contain{
-    /* color: #E02020;
-    background: #fff; */
-    /* border: #e02020 1px solid; */
     padding: 2px 0 20px 0;
 }
