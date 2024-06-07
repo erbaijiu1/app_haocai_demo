@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/common_view",
     "pages/logs/logs"
     ,"pages/cwl/cwl_daily"
     ,"pages/lottery/lottery_daily"

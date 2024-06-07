@@ -1,4 +1,29 @@
 <!--cwl_daily.wxml-->
-<view>
-    <web-view src="{{web_view_url}}"></web-view>
+<view class="header">
+    <view class="greeting">
+        <text>走势图</text>
+    </view>
 </view>
+
+<block  wx:for="{{ all_kj_conf }}" wx:for-item="each_type" wx:key="type_key">
+    <view class="type_kj_container">
+    <block wx:for="{{each_type.value}}" wx:for-item="subItem" wx:key="key">
+        <view class="each_kj_container" bind:tap="onKjClick" data-kjtype="{{subItem.key}}">
+            <view class="img_container">
+                <image src="../../img/icon/{{each_type.type_key}}_{{subItem.key}}.png" mode='aspectFill' class="img_conf"></image>
+            </view>
+            <view class="sub_type_name">
+                {{subItem.value}}
+            </view>
+        </view>
+    </block>
+</view>
+
+</block>
+
+
+<!-- 广告 -->
+<view hidden="{{hidden_ad_view}}" class="ad_container">
+    <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+</view>
+

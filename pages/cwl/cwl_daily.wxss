@@ -244,9 +244,3 @@ page{
     padding: 5px 24px;
 }
 
-.footer_button_contain{
-    /* color: #E02020;
-    background: #fff; */
-    /* border: #e02020 1px solid; */
-    padding: 2px 0 20px 0;
-}

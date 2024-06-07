@@ -41,7 +41,36 @@ function setWebviewUrl(options, web_view_url){
 
 }
 
+
+// 开奖走势图
+function switchTrendPage() {
+    wx.switchTab({
+        url: '/pages/trend/trend'
+    })
+}
+// 开奖走势图
+function switchPage(url, params) {
+    if(params){
+        const app = getApp();
+        app.globalData = params;
+    }
+    wx.switchTab({
+        url: url
+    })
+}
+
+function switchToWebPage(params){
+    if(params && params.web_view_url){
+        wx.navigateTo({
+            url: '/pages/index/common_view?web_view_url='+params.web_view_url
+        });
+    }
+}
+
 module.exports = {
     genShareInfo: genShareInfo,
-    setWebviewUrl:setWebviewUrl
+    setWebviewUrl:setWebviewUrl,
+    switchTrendPage:switchTrendPage
+    ,switchPage:switchPage
+    ,switchToWebPage:switchToWebPage
 };

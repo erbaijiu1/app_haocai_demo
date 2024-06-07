@@ -26,6 +26,8 @@ Page({
           this.setData({
               activeTab: parseInt(options.activeTab, 10)
           });
+      }else{
+        this.checkActive()
       }
   },
 
@@ -68,6 +70,16 @@ Page({
         })
       }
 
+      ,checkActive(){
+        const app = getApp();
+        if(app.globalData&&app.globalData.hasOwnProperty('activeTab')){
+            this.setData({
+                activeTab: parseInt(app.globalData.activeTab, 10)
+            });
+            delete app.globalData.activeTab
+        }
+      }
+
     ,onShareAppMessage: function (options) {
         return {
             title: '最新彩票开奖结果和中奖规则',
@@ -77,12 +89,16 @@ Page({
     }
 
     ,onShareTimeline: function () {
-    return {
-      title: '最新彩票开奖结果和中奖规则',
-      path: '/pages/lottery/lottery_daily?activeTab='+this.data.activeTab
-    //   path: this.data.page_url
+        return {
+        title: '最新彩票开奖结果和中奖规则',
+        path: '/pages/lottery/lottery_daily?activeTab='+this.data.activeTab
+        //   path: this.data.page_url
+        }
     }
-  }
+    ,onShow: function() {
+        this.getDailyData();
+        this.checkActive();
+    }
 
 
   // 广告相关的位置

@@ -1,6 +1,7 @@
 // 使用封装的request方法
 const { wx_get, wx_post } = require('../../utils/wx_request.js');
 
+
 Page({
   data: {
     tabs: [],
@@ -24,9 +25,20 @@ Page({
             activeTab: parseInt(options.activeTab, 10)
         });
     }
-  },
+    this.checkActive();
 
-  onTabCLick(e) {
+  }
+  ,checkActive(){
+    const app = getApp();
+    if(app.globalData&&app.globalData.hasOwnProperty('activeTab')){
+        this.setData({
+            activeTab: parseInt(app.globalData.activeTab, 10)
+        });
+        delete app.globalData.activeTab
+    }
+  }
+
+  ,onTabCLick(e) {
     const index = e.detail.index
     this.setData({activeTab: index})
   },
@@ -79,6 +91,11 @@ Page({
       path: '/pages/cwl/cwl_daily?activeTab='+this.data.activeTab
     //   path: this.data.page_url
     }
+  }
+
+  ,onShow: function() {
+    this.getCwlData()
+    this.checkActive();
   }
 
   ,adLoad() {

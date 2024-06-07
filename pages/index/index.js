@@ -1,45 +1,90 @@
-// index.js
-import url_tool from '../../utils/url_tool.js';
+// pages/home/home.js
+// 使用封装的request方法
+const { wx_get, wx_post } = require('../../utils/wx_request.js');
+const {switchTrendPage,switchPage} = require('../../utils/url_tool.js');
 
-// 获取应用实例
-const app = getApp()
 
 Page({
-  data: {
-    base_web_view : app.globalData.host_name + '/index',
-    web_view_url: app.globalData.host_name + '/index',
-    page_url : '/pages/index/index'
-  },
-  onLoad(options) {
-      var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
-      this.setData({
-        web_view_url:web_view_url
-      });
-  }
-  ,onShareAppMessage: function (options) {
-    var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);
-
-    return {
-      title: '最新彩票开奖结果和中奖规则',
-      path: path_url
+    data: {
+      // 可以在这里添加数据
+      index_data:{}
+      , hidden_ad_view: false
+    },
+    onLoad: function () {
+        this.getIndexData()
+      // 页面加载时的逻辑
     }
+
+    , getIndexData: function(){
+        wx_get('/hc_miniapp/get_index', {'req_type':''})
+          .then(data => {
+            // console.log(data)
+            this.setData({
+                index_data: data
+            })
+          })
+          .catch(err => {
+            console.error(err)
+          })
+      }
+      ,    // 开奖走势图
+      currSwitchTrendPage: function(){
+        switchTrendPage()
+      }
+      ,SwitchMoreCwlPage:function(){
+        switchPage('/pages/cwl/cwl_daily',{'activeTab':1})
+      }
+      ,SwitchCwlPage:function(){
+        switchPage('/pages/cwl/cwl_daily',{'activeTab':0})
+      }
+      
+      ,SwitchMoreLotteryPage:function(){
+        switchPage('/pages/lottery/lottery_daily',{'activeTab':1})
+      }
+      ,SwitchLotteryPage:function(){
+        switchPage('/pages/lottery/lottery_daily',{'activeTab':0})
+      }
+      
+      ,SwithToSubsMain:function(){
+        wx.navigateTo({
+            url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+          });
+      }
+
+      ,onShareAppMessage: function (options) {
+        return {
+            title: '最新彩票开奖结果和中奖规则',
+            path: '/pages/index/index'
+            // path: this.route
+        }
+    }
+
+    ,onShareTimeline: function () {
+        return {
+        title: '最新彩票开奖结果和中奖规则',
+        path: '/pages/index/index'
+        //   path: this.data.page_url
+        }
+    }
+
+
+      
+  ,adLoad() {
+    console.log('Banner 广告加载成功')
+  },
+  adError(err) {
+    if(err.detail && err.detail.errCode !== 1004){
+        console.error('Banner 广告加载失败', err)
+    }
+    console.log('no ad show.')
+    // 关闭广告的view
+    this.setData({
+        hidden_ad_view:true
+    })
+  },
+  adClose() {
+    console.log('Banner 广告关闭')
   }
 
-  ,onShow: function() {
-    // 在页面显示时执行刷新操作
-    // var timestamp = new Date().getTime();
-    //this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
-  }
-  ,onTabItemTap: function(item) {
-    // console.log(item.index)
-    var timestamp = new Date().getTime();
-    this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
-  }
-  
-//   ,onShareTimeline: function () {
-//     return {
-//       title: '最新彩票开奖结果和中奖规则',
-//       path: this.data.page_url
-//     }
-//   }
 })
+  
