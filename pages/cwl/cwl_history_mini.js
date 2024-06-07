@@ -11,13 +11,14 @@ Page({
     ,kj_type:'cwl'
     ,kjContextMap:{}
     ,detailRuleShowMap:{}
+    ,check_v:0
   }
   ,onLoad() {
     //   const tabs = [{title:'ball A', kj_type:'dlt'},{title:'ball B', kj_type:'pls'},{title:'ball C', kj_type:'plw'},{title:'ball D', kj_type:'qxc'}]
     const tabs = [{title:'双色球', sub_type:'ssq'},{title:'福彩3D', sub_type:'3d'},{title:'七乐彩', sub_type:'qlc'},{title:'快乐8', sub_type:'kl8'}]
       this.setData({ tabs })
 
-      this.getKjHistory(this.data.kj_type, '', '')
+      this.getKjHistory(this.data.kj_type, '', '', 5)
 
       // 初始化 expandStatus 对象,将所有列表项设置为折叠状态, 这个默认为空就行
     //   this.initExpandStatus();
@@ -40,14 +41,18 @@ Page({
     this.setData({activeTab: index})
   }
 
-  ,getKjHistory: function(kj_type, sub_type, max_issue){
-    wx_get('/hc_miniapp/get_kj_history', {'kj_type':kj_type, 'sub_type':sub_type, 'max_issue':max_issue})
+  ,getKjHistory: function(kj_type, sub_type, max_issue, page_size=10){
+    wx_get('/hc_miniapp/get_kj_history', {'kj_type':kj_type, 'sub_type':sub_type, 'max_issue':max_issue
+            , 'page_size':page_size})
       .then(data => {
-        // console.log(data)
+        console.log(data)
         this.setData({
             // cwl_data: data
         })
         this.setQueryContext(data)
+        if(data['check_v']){
+            this.setData({check_v:data['check_v']});
+        }
       })
       .catch(err => {
         console.error(err)
@@ -58,7 +63,7 @@ Page({
     , setQueryContext(data) {
         for (let key in data) {
             const item_his = data[key].his_list;
-            if (item_his.length > 0) {
+            if (item_his && item_his.length > 0) {
                 const lastItem = item_his[item_his.length - 1];
                 this.setData({
                     [`kjContextMap.${key}.maxIssue`]: lastItem.Fissue,
@@ -69,9 +74,11 @@ Page({
                     });
                 }
                 else{
-                    this.setData({
-                        [`cwl_data.${key}`]: data[key]
-                    });
+                    if(key != 'check_v'){
+                        this.setData({
+                            [`cwl_data.${key}`]: data[key]
+                        });
+                    }
                 }
             } 
             this.setData({

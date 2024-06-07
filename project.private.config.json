@@ -10,6 +10,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/cwl/cwl_history_mini",
+                    "pathName": "pages/cwl/cwl_history_mini",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/lottery/lottery_daily",
                     "pathName": "pages/lottery/lottery_daily",
                     "query": "activeTab=1",

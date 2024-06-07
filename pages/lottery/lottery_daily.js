@@ -11,6 +11,10 @@ Page({
 
     ,main_type : 'dlt'
   }
+  , setTabs(titles){
+    const tabs = titles.map(item => ({title: item}))
+    this.setData({tabs})
+  }
   ,onLoad(options) {
       const titles = ['超级大乐透', '全部体彩']
       const tabs = titles.map(item => ({ title: item }))
@@ -42,6 +46,10 @@ Page({
         this.setData({
             lottery_data: data
         })
+        if(data['check_v']==1){
+            const titles = ['全部福彩']
+            this.setTabs(titles)
+        }
       })
       .catch(err => {
         console.error(err)

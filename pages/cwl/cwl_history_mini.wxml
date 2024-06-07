@@ -33,7 +33,7 @@
                             </view>
                         
                             <!-- 是否展示开奖规则的图标 -->
-                            <view class="kj_ball_his_detail_ctl_container" bind:tap="showDetailClick" data-clickid="{{item.sub_type + '_' + ball_item.Fissue}}" hidden="{{item.sub_type === 'ssq' ? false:true}}">
+                            <view class="kj_ball_his_detail_ctl_container" bind:tap="showDetailClick" data-clickid="{{item.sub_type + '_' + ball_item.Fissue}}" hidden="{{item.sub_type === 'ssq'? false:true}}" wx:if="{{check_v==0}}">
                                 <image mode="scaleToFill" src="{{detailRuleShowMap[item.sub_type + '_' + ball_item.Fissue] ? '../../img/icon/comm/circle_up.png' : '../../img/icon/comm/circle_down.png'}}" class="kj_his_detail_contral"></image>
                             </view>
                         </view>
@@ -86,12 +86,11 @@
 
                 <!-- 这个是加载更多按钮 -->
                 <button bind:tap="loadMoreClick" class="view_history_btn" style="width:600rpx;">加载更多</button>
-                
                 <view>
-                    <!-- 页面内容 -->
+                    <!-- 脚部内容 -->
                     <footer></footer>
                 </view>
-
+                
             </view>
         </scroll-view>
     </block>

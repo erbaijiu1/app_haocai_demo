@@ -1,7 +1,7 @@
 <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
     <block wx:for="{{tabs}}" wx:key="title">
         <view class="tab-content" slot="tab-content-{{index}}">
-            <view wx:if="{{index == 0}}" class="kj_all_list_container">
+            <view wx:if="{{index == 0 && tabs.length>1}}" class="kj_all_list_container">
                 <view class="kj_ball_list_container" style="padding: 8px 0;">
                     <!-- 00000----   {{item.title}}  -->
                     <view class="kj_ball_list_icon_container">
@@ -96,5 +96,5 @@
 </view>
 <view>
     <!-- 页面内容 -->
-    <footer></footer>
+    <footer_lottery></footer_lottery>
 </view>

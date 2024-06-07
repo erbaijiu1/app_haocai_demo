@@ -9,10 +9,13 @@ Page({
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
     , hidden_ad_view: true
   }
-  ,onLoad(options) {
-    const titles = ['双色球', '全部福彩']
+  , setTabs(titles){
     const tabs = titles.map(item => ({title: item}))
     this.setData({tabs})
+  }
+  ,onLoad(options) {
+    const titles = ['双色球', '全部福彩']
+    this.setTabs(titles)
 
     this.getCwlData()
 
@@ -40,6 +43,10 @@ Page({
         this.setData({
             cwl_data: data
         })
+        if(data['check_v']==1){
+            const titles = ['全部福彩']
+            this.setTabs(titles)
+        }
       })
       .catch(err => {
         console.error(err)
