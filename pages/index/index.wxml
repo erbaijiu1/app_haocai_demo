@@ -7,11 +7,6 @@
         <text>{{index_data.blessing}}</text>
     </view>
   </view>
-  
-
-<!-- <view class="latest-draw">
-    <text>最新开奖，祝你好运</text>
-</view> -->
 
 
 <view class="kj_all_list_container change_bg_white">

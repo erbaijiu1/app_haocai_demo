@@ -9,6 +9,21 @@ Page({
     base_web_view: app.globalData.host_name + '/trend',
     web_view_url: app.globalData.host_name + '/trend',
     page_url : '/pages/trend/trend'
+        , all_kj_conf: [{
+            'type_key': 'cwl', 'value':
+                [{ 'key': 'ssq', 'value': '双色球' },
+                { 'key': 'sd', 'value': '福彩3D' },
+                { 'key': 'qlc', 'value': '七乐彩' },
+                { 'key': 'qlb', 'value': '快乐8' }]
+        },
+        {
+            'type_key': 'lottery', 'value': [{ 'key': 'dlt', 'value': '大乐透' },
+            { 'key': 'pls', 'value': '排列3' },
+            { 'key': 'qxc', 'value': '七星彩' },
+            { 'key': 'plw', 'value': '排列5' }]
+        }
+        ]
+    ,hidden_ad_view:false
   },
   onLoad(options) {
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
@@ -33,5 +48,32 @@ Page({
     // console.log(item.index)
     var timestamp = new Date().getTime();
     this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
+  }
+
+  , onKjClick: function (event) {
+    var kjType = event.currentTarget.dataset.kjtype;
+    console.log(kjType);
+    // const app = getApp();
+    const web_view_url = app.globalData.host_name + '/trend?web_view_url=' + kjType;
+    url_tool.switchToWebPage({'web_view_url':web_view_url});
+  }
+
+
+
+  ,adLoad() {
+    console.log('Banner 广告加载成功')
+  },
+  adError(err) {
+    if(err.detail && err.detail.errCode !== 1004){
+        console.error('Banner 广告加载失败', err);
+    }
+    console.log('no ad show.')
+    // 关闭广告的view
+    this.setData({
+        hidden_ad_view:true
+    })
+  },
+  adClose() {
+    console.log('Banner 广告关闭');
   }
 })

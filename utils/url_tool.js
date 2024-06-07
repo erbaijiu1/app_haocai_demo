@@ -41,9 +41,6 @@ function setWebviewUrl(options, web_view_url){
 
 }
 
-function goToMoreCwlPage(){
-
-}
 
 // 开奖走势图
 function switchTrendPage() {
@@ -53,7 +50,6 @@ function switchTrendPage() {
 }
 // 开奖走势图
 function switchPage(url, params) {
-
     if(params){
         const app = getApp();
         app.globalData = params;
@@ -63,9 +59,18 @@ function switchPage(url, params) {
     })
 }
 
+function switchToWebPage(params){
+    if(params && params.web_view_url){
+        wx.navigateTo({
+            url: '/pages/index/common_view?web_view_url='+params.web_view_url
+        });
+    }
+}
+
 module.exports = {
     genShareInfo: genShareInfo,
     setWebviewUrl:setWebviewUrl,
     switchTrendPage:switchTrendPage
     ,switchPage:switchPage
+    ,switchToWebPage:switchToWebPage
 };

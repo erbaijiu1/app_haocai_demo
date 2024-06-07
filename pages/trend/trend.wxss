@@ -1,4 +1,69 @@
 /**index.wxss**/
-.usermotto {
-  margin-top: 200px;
-}
+
+@import '../common.wxss';
+
+.header {
+    text-align: center;
+    /* margin-bottom: 5px; */
+    /* background: #f2f2f2; */
+  }
+  
+  .greeting {
+    /* margin: 0 0 5px 0; */
+    color: #e02020;
+    background: #fff;
+    border-bottom: #e74c3c solid 1px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .type_kj_container{
+    display: flex;
+    flex-wrap: wrap; /* 允许换行 */
+
+    /* background: #F1EDEE; */
+    /* background: #f5f5f5; */
+    border-radius: 10px; /* 添加圆角 */
+    /* border: #e74c3c 1px dashed; */
+
+
+    justify-content: space-evenly;
+
+    margin: 0 5px 0 5px;
+    padding: 0 10px 10px 10px;
+  }
+
+  .each_kj_container{
+      display: flex;
+      justify-content: flex-start;
+      width: 45%;
+      box-sizing: border-box; /* 包含内边距和边框 */
+      margin: 5px;
+      padding: 10px; /* 可选，增加内边距 */
+      align-items: center;
+      background: #fff;
+      border-radius: 10px; /* 添加圆角 */
+      text-align: center; /* 文本居中 */
+      justify-content: center; 
+      /* align-items: center;  */
+  }
+
+  .img_container{
+      display: flex;
+      text-align: center;
+      align-items: center;
+      height: 100%;
+  }
+
+  .img_conf{
+      height: 80rpx;
+      width: 80rpx;
+  }
+
+  .sub_type_name{
+      /* font-size: 17px; */
+      font-size: 16px;
+      margin: 0 0 0 16px;
+  }
+  

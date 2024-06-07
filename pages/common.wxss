@@ -188,3 +188,9 @@ page{
     padding: 5px 24px;
 }
 /* 几个大按钮  end */
+
+
+/* 广告 */
+.ad_container{
+    margin: 40px 0 0 0;
+}

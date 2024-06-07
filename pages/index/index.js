@@ -18,7 +18,7 @@ Page({
     , getIndexData: function(){
         wx_get('/hc_miniapp/get_index', {'req_type':''})
           .then(data => {
-            console.log(data)
+            // console.log(data)
             this.setData({
                 index_data: data
             })
