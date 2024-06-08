@@ -10,6 +10,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/trend/trend",
+                    "pathName": "pages/trend/trend",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "trend",
                     "pathName": "pages/trend/trend",
                     "query": "",

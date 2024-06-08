@@ -52,9 +52,15 @@ Page({
 
   , onKjClick: function (event) {
     var kjType = event.currentTarget.dataset.kjtype;
-    console.log(kjType);
+    // console.log(kjType);
+    if(kjType == 'sd'){
+        kjType = '3d';
+    }else if(kjType=='qlb'){
+        kjType = 'klb';
+    }
+
     // const app = getApp();
-    const web_view_url = app.globalData.host_name + '/trend?web_view_url=' + kjType;
+    const web_view_url = app.globalData.host_name + '/trend?trend_type=' + kjType;
     url_tool.switchToWebPage({'web_view_url':web_view_url});
   }
 

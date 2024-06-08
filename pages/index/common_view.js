@@ -12,14 +12,18 @@ Page({
     page_url : '/pages/index/index'
   },
   onLoad(options) {
+      web_view_url = this.data.web_view_url
     if(options && options.web_view_url){
-        this.setData({
-            web_view_url: options.web_view_url
-        });
+        web_view_url = options.web_view_url;
+        web_view_url = decodeURIComponent(options.web_view_url);
     }
     //   var web_view_url = this.data.web_view_url
-      var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
-
+    // console.log("common options:", options);
+    var web_view_url = url_tool.setWebviewUrl(options, web_view_url);
+    this.setData({
+        web_view_url: web_view_url
+    });
+    // console.log(web_view_url);
   }
   ,onShareAppMessage: function (options) {
     var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);

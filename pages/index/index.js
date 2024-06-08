@@ -1,7 +1,7 @@
 // pages/home/home.js
 // 使用封装的request方法
 const { wx_get, wx_post } = require('../../utils/wx_request.js');
-const {switchTrendPage,switchPage} = require('../../utils/url_tool.js');
+const {switchTrendPage,switchPage,setWebviewUrl} = require('../../utils/url_tool.js');
 
 
 Page({
@@ -9,10 +9,17 @@ Page({
       // 可以在这里添加数据
       index_data:{}
       , hidden_ad_view: false
+      , web_view_url:''
     },
-    onLoad: function () {
-        this.getIndexData()
-      // 页面加载时的逻辑
+          // 页面加载时的逻辑
+    onLoad: function (options) {
+        var web_view_url = setWebviewUrl(options, this.data.web_view_url);
+        // console.log(options,web_view_url);
+        if(options && options.redirect_url){
+            // console.log('try to turn:', web_view_url);
+            url_tool.switchToWebPage({'web_view_url':web_view_url});
+        }
+        this.getIndexData();
     }
 
     , getIndexData: function(){

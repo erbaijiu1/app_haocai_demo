@@ -2,5 +2,5 @@
 <view class="footer_class">
     <view>数据来源:  中国福利彩票官网：http://www.cwl.gov.cn</view>
     <view>中国体育彩票官网：https://lottery.gov.cn</view>
-    <view>最终结果以官网公布为准</view>
+    <!-- <view>最终结果以官网公布为准</view> -->
 </view>

@@ -28,7 +28,7 @@ function setWebviewUrl(options, web_view_url){
     }
 
     // 如果有token, 加上token 判断链接中是否已经存在参数
-    if(my_token && login_id){
+    if(my_token && login_id && !web_view_url.includes('token=')){
       var url_str = "token=" + my_token + "&login_id=" + login_id;
       if (web_view_url.includes('?')) {
           web_view_url += '&' + url_str;
@@ -61,8 +61,9 @@ function switchPage(url, params) {
 
 function switchToWebPage(params){
     if(params && params.web_view_url){
+        const web_url = encodeURIComponent(params.web_view_url);
         wx.navigateTo({
-            url: '/pages/index/common_view?web_view_url='+params.web_view_url
+            url: '/pages/index/common_view?web_view_url='+web_url
         });
     }
 }
