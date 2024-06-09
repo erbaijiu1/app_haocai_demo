@@ -1,0 +1,6 @@
+<view class="marquee-container">
+  <view class="marquee-content">
+    <text class="marquee-text">{{text}}</text>
+  </view>
+</view>
+

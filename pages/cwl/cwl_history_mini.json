@@ -1,6 +1,6 @@
 {
   "usingComponents": {
     "mp-tabs": "../../components/tabs/index"
-    ,"footer": "../../components/footer/footer"
+    ,"footer_cwl": "../../components/footer/footer_cwl"
   }
 }

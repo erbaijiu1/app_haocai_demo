@@ -88,7 +88,7 @@
                 <button bind:tap="loadMoreClick" class="view_history_btn" style="width:600rpx;">加载更多</button>
                 <view>
                     <!-- 脚部内容 -->
-                    <footer></footer>
+                    <footer_cwl></footer_cwl>
                 </view>
                 
             </view>

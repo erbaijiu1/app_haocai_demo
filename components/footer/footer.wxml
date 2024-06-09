@@ -1,6 +1,10 @@
 <!-- footer.wxml -->
 <view class="footer_class">
-    <view>数据来源:  中国福利彩票官网：http://www.cwl.gov.cn</view>
+    <!-- <view> -->
+    <text>小程序仅提供国家彩票结果查询\n不涉及任何线上售彩交、推荐、模拟玩法、竞彩等内容
+    </text>
+    <!-- </view> -->
+    <view>数据来源：中国福利彩票官网：http://www.cwl.gov.cn</view>
     <view>中国体育彩票官网：https://lottery.gov.cn</view>
     <!-- <view>最终结果以官网公布为准</view> -->
 </view>

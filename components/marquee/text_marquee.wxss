@@ -1,0 +1,33 @@
+/* 父容器样式 */
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    /* background-color: #f8f8f8; */
+    /* border: 1px solid #ddd; */
+    padding: 5px;
+  }
+  
+  /* 滚动内容样式 */
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+  }
+  
+  /* 动画样式 */
+  @keyframes marquee {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  /* 文字样式 */
+  .marquee-text {
+    display: inline-block;
+    padding-right: 100%; /* 留出足够的空白来实现无缝滚动 */
+  }
+  

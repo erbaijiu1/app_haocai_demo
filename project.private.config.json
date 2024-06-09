@@ -10,6 +10,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "index",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/trend/trend",
                     "pathName": "pages/trend/trend",
                     "query": "",
@@ -34,13 +41,6 @@
                     "name": "pages/training/lottery_daily",
                     "pathName": "pages/training/lottery_daily",
                     "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "index",
-                    "pathName": "pages/index/index",
-                    "query": "token=dev.conf_1000e37ec6b24d19bbae6688e58e10f3&login_id=1&redirect_url=https%253A%252F%252Fwww.yjhcai.cn%252Findex",
                     "launchMode": "default",
                     "scene": null
                 },

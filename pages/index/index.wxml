@@ -1,4 +1,5 @@
 <!-- pages/home/home.wxml -->
+
 <view class="header">
     <view class="greeting">
         <text >{{index_data['greeting']}}追梦人</text>
@@ -7,6 +8,7 @@
         <text>{{index_data.blessing}}</text>
     </view>
   </view>
+
 
 
 <view class="kj_all_list_container change_bg_white">
@@ -70,6 +72,10 @@
 
 
 </view>
+
+<!-- <view>
+  <text_marquee text="郑重声明：本小程序不涉及提供线上售彩交、推荐、模拟玩法、竞彩等服务。"></text_marquee>
+</view> -->
 
 <view class="subs_free_container">
     <view bind:tap="SwithToSubsMain" class="view_history_btn add_main_color modify_subs_free_size"  style="margin: 2px 0;">免费订阅微信提醒</view>

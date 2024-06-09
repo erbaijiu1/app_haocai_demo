@@ -1,6 +1,7 @@
 {
     "usingComponents": {
         "footer": "../../components/footer/footer"
+        ,"text_marquee":"/components/marquee/text_marquee"
       }
   }
   
