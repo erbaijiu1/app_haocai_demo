@@ -1,3 +1,9 @@
+<block wx:if="{{cwl_data['check_v'] == 1}}">
+    <view>
+        <web-view src="{{web_view_url}}"></web-view>
+    </view>
+</block>
+
 <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
     <block wx:for="{{tabs}}" wx:key="title">
         <view class="tab-content" slot="tab-content-{{index}}">
@@ -51,7 +57,7 @@
                 </view>
             </view>
 
-            <view wx:else="">
+            <view  wx:elif="{{ cwl_data['check_v']!=1}}" >
                 <block wx:for="{{['ssq', 'sd', 'qlc', 'qlb']}}" wx:key="item">
                     <view class="kj_ball_list_container">
                         <view class="kj_ball_list_icon_container">

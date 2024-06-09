@@ -1,7 +1,7 @@
 // pages/home/home.js
 // 使用封装的request方法
 const { wx_get, wx_post } = require('../../utils/wx_request.js');
-const {switchTrendPage,switchPage,setWebviewUrl} = require('../../utils/url_tool.js');
+const {switchTrendPage,switchPage,setWebviewUrl,switchToWebPage} = require('../../utils/url_tool.js');
 
 
 Page({
@@ -17,7 +17,7 @@ Page({
         // console.log(options,web_view_url);
         if(options && options.redirect_url){
             // console.log('try to turn:', web_view_url);
-            url_tool.switchToWebPage({'web_view_url':web_view_url});
+            switchToWebPage({'web_view_url':web_view_url});
         }
         this.getIndexData();
     }

@@ -45,7 +45,7 @@ Page({
     wx_get('/hc_miniapp/get_kj_history', {'kj_type':kj_type, 'sub_type':sub_type, 'max_issue':max_issue
             , 'page_size':page_size})
       .then(data => {
-        console.log(data)
+        // console.log(data)
         this.setData({
             // cwl_data: data
         })
@@ -90,7 +90,7 @@ Page({
     // 到达底部更新
     ,loadMoreClick(){
     // , onReachBottom() {
-        console.log("loadMoreClick")
+        // console.log("loadMoreClick")
         if (!this.data.isLoading) {
             this.loadMoreData();
         }

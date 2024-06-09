@@ -10,6 +10,7 @@ Page({
     , hidden_ad_view: true
 
     ,main_type : 'dlt'
+    ,web_view_url: 'https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
   }
   , setTabs(titles){
     const tabs = titles.map(item => ({title: item}))

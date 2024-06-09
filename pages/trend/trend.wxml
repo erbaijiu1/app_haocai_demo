@@ -23,7 +23,7 @@
 
 
 <!-- 广告 -->
-<view hidden="{{hidden_ad_view}}" class="ad_container">
+<view hidden="{{hidden_ad_view}}" class="ad_container add_margin">
     <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
     <!-- <ad unit-id="adunit-7db788ce96da52cf" ad-type="video" ad-theme="white" bindload="adLoad" binderror="adError" bindclose="adClose"></ad> -->
 </view>

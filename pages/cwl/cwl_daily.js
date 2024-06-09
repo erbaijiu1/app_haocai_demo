@@ -9,6 +9,7 @@ Page({
     cwl_data:{}
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
     , hidden_ad_view: true
+    ,web_view_url: 'https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
   }
   , setTabs(titles){
     const tabs = titles.map(item => ({title: item}))
