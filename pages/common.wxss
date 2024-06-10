@@ -41,17 +41,20 @@ page{
 /* 远程路径的背景图 */
 .red_ball_bg{
   background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 100% 100%; /* 调整背景图片尺寸，使其覆盖整个元素 */
   background-repeat: no-repeat;
 }
 .blue_ball_bg{
   background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png');
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 100% 100%; /* 调整背景图片尺寸，使其覆盖整个元素 */
   background-repeat: no-repeat;
 }
 .yellow_ball_bg{
   background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_orange.png');
-  background-size: cover;
+  /* background-size: cover; */
+  background-size: 100% 100%; /* 调整背景图片尺寸，使其覆盖整个元素 */
   background-repeat: no-repeat;
 }
 
@@ -117,22 +120,18 @@ page{
 
 /* 彩球的样式 */
 .kj_ball_list_ball_base{
-    /* background-color: #6490EF;
-    */
-    font-size: 15px;
-    /* border-radius: 100%; */
+    font-size: 34rpx;
     display: inline-block;
-
-    width: 28px;
-    height: 28px;
-    line-height: 28px;
-
+    width: 50rpx;
+    height: 50rpx;
+    line-height: 50rpx;
     vertical-align: middle;
     text-align: center;
     display: inline-block;
     padding: 2px 0px;
-    margin: 2px; 
+    margin: 1px; 
     color: #fff;
+    text-shadow: 1rpx 1rpx 1rpx rgba(0, 0, 0, 0.3); /* 添加浅浅的黑边 */
 }
 
 .cwl_ball_add_red{
@@ -149,6 +148,7 @@ page{
     background: #fff; */
     /* border: #e02020 1px solid; */
     padding: 2px 0 20px 0;
+    margin: 20rpx 0 0 0;
 }
 
 /* 列表展示的样式，如双色球列表展示的样式  end */
@@ -196,4 +196,9 @@ page{
 /* 广告 */
 .ad_container{
     margin: 40px 0 0 0;
+}
+
+/* */
+.custom-swiper-item{
+    overflow: auto;
 }

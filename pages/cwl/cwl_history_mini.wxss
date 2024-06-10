@@ -189,24 +189,19 @@ page{
 }
 
 /* 彩球的样式 */
-.kj_ball_list_ball_base{
-    /* background-color: #6490EF;
-    */
+/* .kj_ball_list_ball_base{
     font-size: 15px;
-    /* border-radius: 100%; */
     display: inline-block;
-
     width: 28px;
     height: 28px;
     line-height: 28px;
-
     vertical-align: middle;
     text-align: center;
     display: inline-block;
     padding: 2px 0px;
     margin: 2px; 
     color: #fff;
-}
+} */
 
 .cwl_ball_add_red{
     color: #fff;

@@ -23,7 +23,7 @@
                             <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
                                 {{item}}
                             </view>
-                            <view class="kj_ball_list_ball_base cwl_ball_add_blue blue_ball_bg">{{cwl_data.ssq_result.Fblue_ball}}</view>
+                            <view class="kj_ball_list_ball_base blue_ball_bg">{{cwl_data.ssq_result.Fblue_ball}}</view>
                         </view>
                     </view>
                 </view>
@@ -76,7 +76,7 @@
                                     </view>
                                 </block>
                                 <block wx:else="">
-                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red red_ball_bg" >
                                         {{red_ball}}
                                     </view>
                                 </block>

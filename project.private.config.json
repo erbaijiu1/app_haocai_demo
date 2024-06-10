@@ -10,6 +10,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "cwl_daily",
+                    "pathName": "pages/cwl/cwl_daily",
+                    "query": "activeTab=1",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/cwl/cwl_history_mini",
                     "pathName": "pages/cwl/cwl_history_mini",
                     "query": "",
@@ -47,13 +54,6 @@
                 {
                     "name": "pages/training/lottery_daily",
                     "pathName": "pages/training/lottery_daily",
-                    "query": "",
-                    "launchMode": "default",
-                    "scene": null
-                },
-                {
-                    "name": "cwl_daily",
-                    "pathName": "pages/cwl/cwl_daily",
                     "query": "",
                     "launchMode": "default",
                     "scene": null
