@@ -89,9 +89,12 @@
                 <view>
                     <!-- 脚部内容 -->
                     <footer_cwl></footer_cwl>
+                    <video_ad></video_ad>
                 </view>
                 
             </view>
         </scroll-view>
     </block>
 </mp-tabs>
+
+

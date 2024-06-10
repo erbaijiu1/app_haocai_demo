@@ -27,8 +27,8 @@
 }
 
 .add_main_color{
-    /* background-color: #E02020;     */
-    background-color: #D85E5B;
+    background-color: #E02020;    
+    /* background-color: #D85E5B; */
     color: #fff;
 }
 
@@ -52,10 +52,11 @@
     justify-content: center;
     width: 100%;
     margin: 20px 0px 0 0;
+    flex-direction: column;
 }
 
 .modify_subs_free_size{
-    border-radius: 10px; /* 设置圆角半径 */
+    border-radius: 5px; /* 设置圆角半径 */
     text-align: center; /* 水平居中对齐 */
     display: flex;
     justify-content: center; /* 水平居中对齐 */
@@ -182,4 +183,8 @@
     margin-top: 4px;
     font-size: 12px;
   }
-  
+
+.add_banner_margin{
+    margin: 10px 0 0 0;
+    padding: 2px 0;
+}

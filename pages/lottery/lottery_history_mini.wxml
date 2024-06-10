@@ -90,6 +90,7 @@
                 <view>
                     <!-- 脚部页面内容 -->
                     <footer_lottery></footer_lottery>
+                    <video_ad></video_ad>
                 </view>
 
 

@@ -26,6 +26,7 @@ page{
     box-sizing: border-box;
     /* padding: 40rpx; */
     background: #F1EDEE;
+    margin-top: 0px;
 }
 
 /* .weui-tabs-bar__title {

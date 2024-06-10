@@ -2,5 +2,6 @@
   "usingComponents": {
     "mp-tabs": "../../components/tabs/index"
     ,"footer_lottery": "../../components/footer/footer_lottery"
+    ,"video_ad":"/components/ad/video_ad"
   }
 }

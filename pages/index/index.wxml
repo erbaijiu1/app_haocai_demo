@@ -77,8 +77,14 @@
   <text_marquee text="郑重声明：本小程序不涉及提供线上售彩交、推荐、模拟玩法、竞彩等服务。"></text_marquee>
 </view> -->
 
-<view class="subs_free_container">
+<!-- <view class="subs_free_container">
     <view bind:tap="SwithToSubsMain" class="view_history_btn add_main_color modify_subs_free_size"  style="margin: 2px 0;">免费订阅微信提醒</view>
+</view> -->
+
+<view class="footer_button_contain add_banner_margin">
+    <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">免费订阅微信提醒</button>
+    <button openType="share" data-fromparam="share_btn" class="view_history_btn" style="width:600rpx;">分享给朋友</button>
+    <!-- <button bindtap="goToTrendPage" class="history_trend_btn" style="width:600rpx;">历史走势图</button> -->
 </view>
 
 

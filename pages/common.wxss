@@ -163,6 +163,7 @@ page{
     margin: 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
+    border-radius: 5px;
 }
 .view_history_btn{
     color: #E02020;
@@ -171,6 +172,7 @@ page{
     margin: 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
+    border-radius: 5px;
 }
 
 .share_button{
@@ -186,6 +188,7 @@ page{
     margin: 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
+    border-radius: 5px;
 }
 /* 几个大按钮  end */
 
