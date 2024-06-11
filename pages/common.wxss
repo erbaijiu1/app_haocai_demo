@@ -169,7 +169,7 @@ page{
     color: #E02020;
     background: #fff;
     border: #e02020 1px solid;
-    margin: 20rpx 0;
+    margin: 20rpx 0 20rpx 0;
     font-weight: normal;
     padding: 5px 24px;
     border-radius: 5px;
