@@ -12,6 +12,7 @@ Page({
     ,kjContextMap:{}
     ,detailRuleShowMap:{}
     ,check_v:0
+    ,web_view_url: 'https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
   }
   ,onLoad() {
     //   const tabs = [{title:'ball A', kj_type:'dlt'},{title:'ball B', kj_type:'pls'},{title:'ball C', kj_type:'plw'},{title:'ball D', kj_type:'qxc'}]

@@ -12,6 +12,7 @@ Page({
     ,kjContextMap:{}
     ,detailRuleShowMap:{}
     ,check_v:0
+    ,web_view_url: 'https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
   }
   ,onLoad() {
     const tabs = [{title:'大乐透', sub_type:'dlt'},{title:'排列3', sub_type:'pls'},{title:'排列5', sub_type:'plw'},{title:'七星彩', sub_type:'qxc'}]

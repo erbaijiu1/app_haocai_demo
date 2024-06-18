@@ -1,4 +1,7 @@
 <!-- pages/home/home.wxml -->
+<block wx:if="{{index_data['check_v']==1}}">
+    <web-view src='{{web_view_url}}'></web-view>
+</block>
 
 <view class="header">
     <view class="greeting">

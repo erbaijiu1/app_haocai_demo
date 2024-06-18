@@ -1,4 +1,8 @@
-<!--cwl_daily.wxml-->
+<block wx:if="{{trend_data['check_v']==1}}">
+    <web-view src='https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'></web-view>
+</block>
+
+
 <view class="header">
     <view class="greeting">
         <text>走势图</text>
@@ -20,6 +24,7 @@
 </view>
 
 </block>
+<footer></footer>
 
 
 <!-- 广告 -->

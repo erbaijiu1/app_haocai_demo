@@ -1,5 +1,6 @@
 // index.js
 import url_tool from '../../utils/url_tool.js';
+const { wx_get, wx_post } = require('../../utils/wx_request.js');
 
 // 获取应用实例
 const app = getApp()
@@ -24,12 +25,26 @@ Page({
         }
         ]
     ,hidden_ad_view:false
+    ,trend_data:{}
   },
-  onLoad(options) {
+  getTrendData: function(){
+    wx_get('/hc_miniapp/trend', {'req_type':''})
+      .then(data => {
+        console.log(data)
+        this.setData({
+            trend_data: data
+        })
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+  ,onLoad(options) {
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
       this.setData({
         web_view_url:web_view_url
       });
+      this.getTrendData();
   }
   ,onShareAppMessage: function (options) {
     var path_url = url_tool.genShareInfo(options.webViewUrl, this.data.page_url);

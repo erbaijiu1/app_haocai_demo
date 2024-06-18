@@ -1,3 +1,7 @@
+<block wx:if="{{check_v==1}}">
+    <web-view src='{{web_view_url}}'></web-view>
+</block>
+
 <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
     <block wx:for="{{tabs}}" wx:key="title">
         <scroll-view class="tab-content" slot="tab-content-{{index}}" scroll-y="true"> 
