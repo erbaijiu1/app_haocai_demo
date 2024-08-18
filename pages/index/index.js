@@ -1,6 +1,6 @@
 // pages/home/home.js
 // 使用封装的request方法
-const { wx_get, wx_post } = require('../../utils/wx_request.js');
+const { wx_get, wx_post, wx_app_login } = require('../../utils/wx_request');
 const {switchTrendPage,switchPage,setWebviewUrl,switchToWebPage} = require('../../utils/url_tool.js');
 
 
@@ -11,6 +11,8 @@ Page({
       , hidden_ad_view: false
     //   , web_view_url:'https://yjhcai.cn/index'
         , web_view_url:'https://mp.weixin.qq.com/s/l07BYUfDDWUb1aNB0aNCTw'
+        , user_subs_status:-1
+        , login_this_time:0
     },
           // 页面加载时的逻辑
     onLoad: function (options) {
@@ -21,6 +23,8 @@ Page({
             switchToWebPage({'web_view_url':web_view_url});
         }
         this.getIndexData();
+        // this.wx_login();
+        wx_app_login(this);
     }
 
     , getIndexData: function(){

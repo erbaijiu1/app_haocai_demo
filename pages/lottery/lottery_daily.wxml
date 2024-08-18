@@ -96,7 +96,14 @@
 
 <!-- 底部按钮   style="padding:10px 0 25px 0;padding:8px 0 20px 0;" -->
 <view class="footer_button_contain">
-    <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button>
+    <block wx:if="{{ (login_this_time == 1 && user_subs_status != 1) || user_subs_status == 0 }}">
+        <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">免费开启每日开奖提醒</button>
+        <button openType="share" data-fromparam="share_btn" class="view_history_btn" style="width:600rpx;">分享给朋友</button>
+    </block>
+    <block wx:else="">
+        <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button>
+    </block>
+    <!-- <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button> -->
     <button bind:tap="goToCWLHistoryPage" class="view_history_btn" style="width:600rpx;">查往期开奖</button>
     <button bindtap="goToTrendPage" class="history_trend_btn" style="width:600rpx;">历史走势图</button>
 </view>

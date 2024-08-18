@@ -1,5 +1,5 @@
 // 使用封装的request方法
-const { wx_get, wx_post } = require('../../utils/wx_request.js');
+const { wx_get, wx_post, wx_app_login } = require('../../utils/wx_request.js');
 
 
 Page({
@@ -10,6 +10,8 @@ Page({
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
     , hidden_ad_view: true
     ,web_view_url: 'https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+    , user_subs_status:-1
+    , login_this_time:0
   }
   , setTabs(titles){
     const tabs = titles.map(item => ({title: item}))
@@ -28,6 +30,7 @@ Page({
     }
     this.checkActive();
 
+    wx_app_login(this);
   }
   ,checkActive(){
     const app = getApp();
