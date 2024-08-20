@@ -1,5 +1,6 @@
 {
     "usingComponents": {
         "footer": "/components/footer/footer"
+        ,"video_ad":"/components/ad/video_ad"
       }
 }

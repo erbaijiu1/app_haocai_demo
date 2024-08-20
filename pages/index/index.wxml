@@ -80,12 +80,9 @@
   <text_marquee text="郑重声明：本小程序不涉及提供线上售彩交、推荐、模拟玩法、竞彩等服务。"></text_marquee>
 </view> -->
 
-<!-- <view class="subs_free_container">
-    <view bind:tap="SwithToSubsMain" class="view_history_btn add_main_color modify_subs_free_size"  style="margin: 2px 0;">免费开启每日开奖提醒</view>
-</view> -->
 
 <view class="footer_button_contain add_banner_margin">
-    <block wx:if="{{ (login_this_time == 1 && user_subs_status != 1) || user_subs_status == 0 }}">
+    <block wx:if="{{ login_this_time == 1 || user_subs_status != 1 }}">
         <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">免费开启每日开奖提醒</button>
         <button openType="share" data-fromparam="share_btn" class="view_history_btn" style="width:600rpx;">分享给朋友</button>
     </block>
@@ -103,5 +100,6 @@
 
 <!-- 广告 -->
 <view hidden="{{hidden_ad_view}}" class="ad_container">
-    <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
+    <!-- <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad> -->
+    <video_ad ad-unit-id="adunit-77e61343cc958c4d"></video_ad>
 </view>

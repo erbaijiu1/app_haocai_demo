@@ -1,12 +1,12 @@
 // utils/request.js
 const config = {
-    baseUrl: 'http://127.0.0.1:8000',
-    // baseUrl: 'https://yjhcai.cn' // 设置API的基础路径
+    // baseUrl: 'http://127.0.0.1:8000'
+    baseUrl: 'https://yjhcai.cn' // 设置API的基础路径
 } 
 
 const wx_request = (url, method, data, header = {}) => {
     if(data){
-        data['version'] = '0.1.4'
+        data['version'] = '0.1.6'
     }
     return new Promise((resolve, reject) => {
     wx.request({

@@ -93,7 +93,7 @@
                 <view>
                     <!-- 脚部内容 -->
                     <footer_cwl></footer_cwl>
-                    <video_ad></video_ad>
+                    <video_ad ad-unit-id="adunit-97f6104347987e4f"></video_ad>
                 </view>
                 
             </view>

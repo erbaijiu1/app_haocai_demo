@@ -94,7 +94,7 @@
                 <view>
                     <!-- 脚部页面内容 -->
                     <footer_lottery></footer_lottery>
-                    <video_ad></video_ad>
+                    <video_ad ad-unit-id="adunit-97f6104347987e4f"></video_ad>
                 </view>
 
 

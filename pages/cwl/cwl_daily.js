@@ -102,6 +102,12 @@ Page({
     this.checkActive();
   }
 
+  ,SwithToSubsMain:function(){
+    wx.navigateTo({
+        url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+      });
+  }
+
   ,adLoad() {
     console.log('Banner 广告加载成功')
   },

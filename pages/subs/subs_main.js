@@ -12,6 +12,15 @@ Page({
   },
   onLoad(options) {
       var web_view_url = url_tool.setWebviewUrl(options, this.data.web_view_url);
+      const local_app_openid = wx.getStorageSync('app_openid');
+    //   console.log("local_app_openid:", local_app_openid)
+      if(local_app_openid){
+        if (web_view_url.includes('?')) {
+            web_view_url += '&app_openid=' + local_app_openid;
+        } else {
+            web_view_url += '?app_openid=' + local_app_openid;
+        }
+      }
       this.setData({
         web_view_url:web_view_url
       });
@@ -31,7 +40,13 @@ Page({
   }
   ,onTabItemTap: function(item) {
     // console.log(item.index)
+    var web_view_url = this.data.web_view_url;
+    var addCmd = "?";
+    if(web_view_url.indexOf('?')>0){
+        addCmd = '&';
+    }
     var timestamp = new Date().getTime();
-    this.setData({web_view_url:this.data.base_web_view + '?timestp=' + timestamp});
+    web_view_url += addCmd + 'timestp=' + timestamp;
+    this.setData({web_view_url:web_view_url});
   }
 })

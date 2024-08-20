@@ -1,4 +1,4 @@
 <view class="footer_class">
-    <text>本小程序仅提供彩票结果查询，数据全部来源于官方平台\n不提供任何线上售彩、选号、推荐、模拟玩法、竞彩等内容</text>
+    <!-- <text>本小程序仅提供彩票结果查询，数据全部来源于官方平台\n不提供任何线上售彩、选号、推荐、模拟玩法、竞彩等内容</text> -->
     <view>小程序数据来源：中国福利彩票官网(http://www.cwl.gov.cn)，中国体育彩票官网(https://lottery.gov.cn)</view>
 </view>

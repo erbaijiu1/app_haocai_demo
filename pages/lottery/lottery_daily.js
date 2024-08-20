@@ -105,6 +105,15 @@ Page({
         this.checkActive();
     }
 
+    ,SwithToSubsMain:function(){
+        wx.navigateTo({
+            url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+          });
+      }
+    // , onTabItemTap: function(item) {
+    //     this.onLoad(); // 重新加载数据
+    // }
+
 
   // 广告相关的位置
   // ,adLoad() {
