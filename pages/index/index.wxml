@@ -76,14 +76,10 @@
 
 </view>
 
-<!-- <view>
-  <text_marquee text="郑重声明：本小程序不涉及提供线上售彩交、推荐、模拟玩法、竞彩等服务。"></text_marquee>
-</view> -->
-
 
 <view class="footer_button_contain add_banner_margin">
     <block wx:if="{{ login_this_time == 1 || user_subs_status != 1 }}">
-        <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">免费开启每日开奖提醒</button>
+        <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">点击免费领取一注双色球</button>
         <button openType="share" data-fromparam="share_btn" class="view_history_btn" style="width:600rpx;">分享给朋友</button>
     </block>
     <block wx:else="">

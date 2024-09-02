@@ -6,7 +6,7 @@ const config = {
 
 const wx_request = (url, method, data, header = {}) => {
     if(data){
-        data['version'] = '0.1.6'
+        data['version'] = '0.1.7'
     }
     return new Promise((resolve, reject) => {
     wx.request({

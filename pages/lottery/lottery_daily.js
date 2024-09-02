@@ -107,7 +107,8 @@ Page({
 
     ,SwithToSubsMain:function(){
         wx.navigateTo({
-            url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+        // url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+        url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/3ALSmOKeJNX5Gu7dVxM0JQ'
           });
       }
     // , onTabItemTap: function(item) {

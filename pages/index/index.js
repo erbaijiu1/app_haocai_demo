@@ -10,7 +10,8 @@ Page({
       index_data:{}
       , hidden_ad_view: false
     //   , web_view_url:'https://yjhcai.cn/index'
-        , web_view_url:'https://mp.weixin.qq.com/s/l07BYUfDDWUb1aNB0aNCTw'
+        // , web_view_url:'https://mp.weixin.qq.com/s/l07BYUfDDWUb1aNB0aNCTw'
+        , web_view_url:'https://mp.weixin.qq.com/s/fKSrY9HuT2N1a_9x9zoMpg'
         , user_subs_status:-1
         , login_this_time:0
     },
@@ -59,8 +60,9 @@ Page({
       
       ,SwithToSubsMain:function(){
         wx.navigateTo({
-            url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
-          });
+        // url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+        url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/3ALSmOKeJNX5Gu7dVxM0JQ'
+        });
       }
 
       ,onShareAppMessage: function (options) {
