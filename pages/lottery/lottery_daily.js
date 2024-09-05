@@ -10,7 +10,7 @@ Page({
     , hidden_ad_view: true
 
     ,main_type : 'dlt'
-    ,web_view_url: 'https://mp.weixin.qq.com/s/7xCyDZ3_6EKyCHX0nAbn2Q'
+    ,web_view_url: 'https://mp.weixin.qq.com/s/3s-Z5oWtNzvMjvNfi1A15A'
     , user_subs_status:-1
     , login_this_time:0
   }

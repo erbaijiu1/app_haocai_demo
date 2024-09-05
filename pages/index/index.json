@@ -2,6 +2,7 @@
     "usingComponents": {
         "footer": "../../components/footer/footer"
         ,"video_ad":"/components/ad/video_ad"
+        ,"idx_view":"/components/audit_page/idx_page"
       }
   }
   
