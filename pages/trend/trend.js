@@ -25,7 +25,7 @@ Page({
         }
         ]
     ,hidden_ad_view:false
-    ,trend_data:{}
+    ,trend_data:{'check_v':1}
   },
   getTrendData: function(){
     wx_get('/hc_miniapp/trend', {'req_type':''})

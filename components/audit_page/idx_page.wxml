@@ -1,5 +1,5 @@
 <!-- 广告 -->
-<view class="page_container">
+<view class="page_container" hidden="true">
     <view class="page_title">彩票中奖了怎么兑？</view>
     <view class="pre_view">如果你一不小心中了大奖，那么距离领取奖金只差一步之遥。中奖是激动人心的时刻，但不了解下面这些兑奖事项的话，你可能与大奖失之交臂哦。
     </view>
@@ -9,4 +9,14 @@
     <view class="h1">2. 彩票兑奖有时限，开奖后必须60天内兑奖。</view>
     <view>《彩票管理条例》规定，彩票中奖者应当自开奖之日起60个自然日内，一旦超过了时限，彩票就会作废，奖金冲入彩票公益金。</view>
 </view>
+
+<view>
+    <view class="page_title">1. 我们能做什么？</view>
+    <view class="pre_view">让你最快知道开奖结果！你是否总有一个烦恼，买了福利彩票后，不知道哪里中奖了没有。我怎么成为朋友里，最先知道开奖结果的那一个人？找到我们，就对了，我们就是你要找的！</view>
+
+    <view class="page_title">2. 怎么能最快知道开奖结果？</view>
+    <view class="pre_view">订阅我们的提醒吧！让你每天快人一步。</view>
+</view>
+
+<button bindtap="doSwitchTab" class="history_trend_btn" style="width:600rpx;">订阅提醒</button>
 

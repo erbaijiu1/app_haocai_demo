@@ -58,4 +58,23 @@
         }
     ]
     }
+    ,"tabBarNew": {
+        "color": "#7A7E83",
+        "selectedColor": "#D85E5B",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [{
+                "text": "首页",
+                "pagePath": "pages/index/index",
+                "iconPath": "img/memu/index1.png",
+                "selectedIconPath": "img/memu/index2.png"
+            },
+            {
+                "text": "我的",
+                "pagePath": "pages/subs/subs_main",
+                "iconPath": "img/memu/my1.png",
+                "selectedIconPath": "img/memu/my2.png"
+            }
+        ]
+        }
 }

@@ -1,9 +1,9 @@
 <block wx:if="{{trend_data['check_v']==1}}">
-    <web-view src='https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'></web-view>
+    <web-view src='https://mp.weixin.qq.com/s/OWV85JGgYZ1xbiOU7COWVQ'></web-view>
 </block>
 
-
-<view class="header">
+<block wx:else="">
+    <view class="header">
     <view class="greeting">
         <text>走势图</text>
     </view>
@@ -25,6 +25,9 @@
 
 </block>
 <footer></footer>
+
+
+</block>
 
 
 <!-- 广告 -->

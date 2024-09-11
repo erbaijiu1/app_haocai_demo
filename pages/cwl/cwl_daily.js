@@ -6,7 +6,7 @@ Page({
   data: {
     tabs: [],
     activeTab: 0,
-    cwl_data:{}
+    cwl_data:{'check_v':1}
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
     , hidden_ad_view: true
     ,web_view_url: 'https://mp.weixin.qq.com/s/1dKDtfo3nXmVPxfTq02nmg'

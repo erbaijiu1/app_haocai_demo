@@ -4,7 +4,10 @@
     </view>
 </block>
 
-<mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
+<block wx:else="">
+
+
+    <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
     <block wx:for="{{tabs}}" wx:key="title">
         <view class="tab-content" slot="tab-content-{{index}}">
             <view wx:if="{{index == 0 && tabs.length>1}}" class="kj_all_list_container">
@@ -89,12 +92,6 @@
     </block>
 </mp-tabs>
 
-<!-- 广告 -->
-<!-- <view hidden="{{hidden_ad_view}}">
-    <ad unit-id="adunit-4b48d41eda5c1b9f" bindload="adLoad" binderror="adError" bindclose="adClose"></ad>
-</view> -->
-
-<!-- 底部按钮   style="padding:10px 0 25px 0;padding:8px 0 20px 0;" -->
 <view class="footer_button_contain">
     <block wx:if="{{ (login_this_time == 1 && user_subs_status != 1) || user_subs_status == 0 }}">
         <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">点击免费领取一注双色球</button>
@@ -103,7 +100,6 @@
     <block wx:else="">
         <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button>
     </block>
-    <!-- <button openType="share" data-fromparam="share_btn" class="share_button" style="width:600rpx;">分享给朋友</button> -->
     <button bind:tap="goToCWLHistoryPage" class="view_history_btn" style="width:600rpx;">查往期开奖</button>
     <button bindtap="goToTrendPage" class="history_trend_btn" style="width:600rpx;">历史走势图</button>
 </view>
@@ -111,3 +107,6 @@
     <!-- 页面内容 -->
     <footer_lottery></footer_lottery>
 </view>
+
+</block>
+

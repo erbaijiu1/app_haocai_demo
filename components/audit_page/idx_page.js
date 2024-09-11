@@ -9,6 +9,11 @@ Component({
         hidden_ad_view : false
     }
     , methods: {
+        doSwitchTab() {
+            wx.switchTab({
+              url: '/pages/subs/subs_main'
+            })
+        }
     }
 
   });

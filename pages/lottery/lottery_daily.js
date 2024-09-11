@@ -5,7 +5,7 @@ Page({
   data: {
     tabs: [],
     activeTab: 0,
-    lottery_data:{}
+    lottery_data:{"check_v":1}
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖',7:'七等奖',8:'八等奖',9:'九等奖'}
     , hidden_ad_view: true
 

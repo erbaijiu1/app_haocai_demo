@@ -7,7 +7,7 @@ const {switchTrendPage,switchPage,setWebviewUrl,switchToWebPage} = require('../.
 Page({
     data: {
       // 可以在这里添加数据
-      index_data:{}
+      index_data:{'check_v':1}
       , hidden_ad_view: false
     //   , web_view_url:'https://yjhcai.cn/index'
         // , web_view_url:'https://mp.weixin.qq.com/s/l07BYUfDDWUb1aNB0aNCTw'
