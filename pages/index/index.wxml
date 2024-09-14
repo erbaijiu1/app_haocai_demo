@@ -9,7 +9,6 @@
   </view>
 
 <block wx:if="{{index_data['check_v']==1}}">
-    <!-- <web-view src='{{web_view_url}}'></web-view> -->
     <idx_view></idx_view>
 </block>
 
@@ -28,10 +27,10 @@
                 <view class="kj_ball_list_desc_text_open_day">{{index_data.ssq.open_day}}</view>
             </view>
             <view class="kj_ball_list">
-                <view wx:for="{{index_data.ssq.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                <view wx:for="{{index_data.ssq.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
                     {{item}}
                 </view>
-                <view class="kj_ball_list_ball_base blue_ball_bg">{{index_data.ssq.Fblue_ball}}</view>
+                <view class="kj_ball_list_ball_base" style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">{{index_data.ssq.Fblue_ball}}</view>
             </view>
             <view class="button_flex">
 
@@ -58,11 +57,11 @@
                 <view class="kj_ball_list_desc_text_open_day">{{index_data.dlt.open_day}}</view>
             </view>
             <view class="kj_ball_list">
-                <view wx:for="{{index_data.dlt.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
+                <view wx:for="{{index_data.dlt.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">
                     {{item}}
                 </view>
-                <!-- <view class="kj_ball_list_ball_base cwl_ball_add_blue blue_ball_bg">{{index_data.dlt.Fblue_ball}}</view> -->
-                <view wx:for="{{index_data.dlt.split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
+
+                <view wx:for="{{index_data.dlt.split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red"  style="background-image: url('/img/icon/cwl_orange.png');background-size: cover;background-repeat: no-repeat;">
                                 {{item}}
                 </view>
             </view>
@@ -79,7 +78,7 @@
 
 
 <view class="footer_button_contain add_banner_margin">
-    <block wx:if="{{ (login_this_time == 1 || user_subs_status != 1) && index_data['check_v'] != 1 }}">
+    <block wx:if="{{ login_this_time == 1 && user_subs_status != 1 && index_data['check_v'] != 1 }}">
         <button bind:tap="SwithToSubsMain" class="share_button" style="width:600rpx;">点击免费领取一注双色球</button>
         <button openType="share" data-fromparam="share_btn" class="view_history_btn" style="width:600rpx;">分享给朋友</button>
     </block>

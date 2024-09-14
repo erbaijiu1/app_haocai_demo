@@ -2,12 +2,12 @@
 // 使用封装的request方法
 const { wx_get, wx_post, wx_app_login } = require('../../utils/wx_request');
 const {switchTrendPage,switchPage,setWebviewUrl,switchToWebPage} = require('../../utils/url_tool.js');
-
+const util = require('../../utils/util');
 
 Page({
     data: {
       // 可以在这里添加数据
-      index_data:{'check_v':1}
+      index_data:{}
       , hidden_ad_view: false
     //   , web_view_url:'https://yjhcai.cn/index'
         // , web_view_url:'https://mp.weixin.qq.com/s/l07BYUfDDWUb1aNB0aNCTw'
@@ -17,8 +17,8 @@ Page({
     },
           // 页面加载时的逻辑
     onLoad: function (options) {
+        util.update_default_show(this, 'index_data.check_v');
         var web_view_url = setWebviewUrl(options, this.data.web_view_url);
-        // console.log(options,web_view_url);
         if(options && options.redirect_url){
             // console.log('try to turn:', web_view_url);
             switchToWebPage({'web_view_url':web_view_url});
@@ -31,7 +31,6 @@ Page({
     , getIndexData: function(){
         wx_get('/hc_miniapp/get_index', {'req_type':''})
           .then(data => {
-            // console.log(data)
             this.setData({
                 index_data: data
             })

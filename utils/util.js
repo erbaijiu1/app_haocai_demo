@@ -14,6 +14,15 @@ const formatNumber = n => {
   return n[1] ? n : `0${n}`
 }
 
+function update_default_show(context, data_name) {
+    const currentDate = new Date();
+    const cutoffDate = new Date('2024-09-15');
+    if (currentDate <= cutoffDate) {
+        context.setData({[data_name]:1});
+    }
+}
+
 module.exports = {
   formatTime
+  ,update_default_show
 }

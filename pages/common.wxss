@@ -40,19 +40,19 @@ page{
 
 /* 远程路径的背景图 */
 .red_ball_bg{
-  background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png');
+  /* background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_redCircle.png'); */
   /* background-size: cover; */
   background-size: 100% 100%; /* 调整背景图片尺寸，使其覆盖整个元素 */
   background-repeat: no-repeat;
 }
 .blue_ball_bg{
-  background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png');
+  /* background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png'); */
   /* background-size: cover; */
   background-size: 100% 100%; /* 调整背景图片尺寸，使其覆盖整个元素 */
   background-repeat: no-repeat;
 }
 .yellow_ball_bg{
-  background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_orange.png');
+  /* background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_orange.png'); */
   /* background-size: cover; */
   background-size: 100% 100%; /* 调整背景图片尺寸，使其覆盖整个元素 */
   background-repeat: no-repeat;

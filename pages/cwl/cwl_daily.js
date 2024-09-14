@@ -1,12 +1,13 @@
 // 使用封装的request方法
 const { wx_get, wx_post, wx_app_login } = require('../../utils/wx_request.js');
+const util = require('../../utils/util');
 
 
 Page({
   data: {
     tabs: [],
     activeTab: 0,
-    cwl_data:{'check_v':1}
+    cwl_data:{}
     ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
     , hidden_ad_view: true
     ,web_view_url: 'https://mp.weixin.qq.com/s/1dKDtfo3nXmVPxfTq02nmg'
@@ -18,6 +19,7 @@ Page({
     this.setData({tabs})
   }
   ,onLoad(options) {
+    util.update_default_show(this, 'cwl_data.check_v');
     const titles = ['双色球', '全部福彩']
     this.setTabs(titles)
 
