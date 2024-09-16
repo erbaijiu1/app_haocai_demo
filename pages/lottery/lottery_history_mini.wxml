@@ -17,11 +17,11 @@
                                     <view class="kj_ball_list_desc_text_open_day kj_ball_list_desc_text_special_add">{{ball_item.date_week}}</view>
                                 </view>
                                 <view class="kj_ball_list">
-                                  <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="{{ item == 'dlt' || item == 'qxc' ? 'background-image: url(/img/icon/cwl_blueCircle.png); background-size: cover; background-repeat: no-repeat;' : 'background-image: url(/img/icon/cwl_redCircle.png); background-size: cover; background-repeat: no-repeat;' }}">
+                                  <view wx:for="{{ball_item.split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red {{ item == 'dlt' || item == 'qxc' ? 'blue_ball_bg':'red_ball_bg' }}">
                                     {{red_ball}}
                                   </view>
                                   
-                                  <view wx:for="{{ball_item.split_bule_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('/img/icon/cwl_orange.png');background-size: cover;background-repeat: no-repeat;">
+                                  <view wx:for="{{ball_item.split_bule_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
                                     {{red_ball}}
                                   </view>
 

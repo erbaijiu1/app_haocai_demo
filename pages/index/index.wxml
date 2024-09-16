@@ -27,10 +27,10 @@
                 <view class="kj_ball_list_desc_text_open_day">{{index_data.ssq.open_day}}</view>
             </view>
             <view class="kj_ball_list">
-                <view wx:for="{{index_data.ssq.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                <view wx:for="{{index_data.ssq.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red red_ball_bg">
                     {{item}}
                 </view>
-                <view class="kj_ball_list_ball_base" style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">{{index_data.ssq.Fblue_ball}}</view>
+                <view class="kj_ball_list_ball_base blue_ball_bg">{{index_data.ssq.Fblue_ball}}</view>
             </view>
             <view class="button_flex">
 
@@ -57,11 +57,11 @@
                 <view class="kj_ball_list_desc_text_open_day">{{index_data.dlt.open_day}}</view>
             </view>
             <view class="kj_ball_list">
-                <view wx:for="{{index_data.dlt.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">
+                <view wx:for="{{index_data.dlt.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
                     {{item}}
                 </view>
 
-                <view wx:for="{{index_data.dlt.split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red"  style="background-image: url('/img/icon/cwl_orange.png');background-size: cover;background-repeat: no-repeat;">
+                <view wx:for="{{index_data.dlt.split_bule_balls}}" wx:key="index" class="kj_ball_list_ball_base cwl_ball_add_red yellow_ball_bg">
                                 {{item}}
                 </view>
             </view>

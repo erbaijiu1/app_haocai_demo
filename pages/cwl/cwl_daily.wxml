@@ -22,10 +22,10 @@
                             <view class="kj_ball_list_desc_text_open_day">{{cwl_data.ssq_result.open_day}}</view>
                         </view>
                         <view class="kj_ball_list">
-                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base" style="background-image: url('/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;">
+                            <view wx:for="{{cwl_data.ssq_result.split_red_balls}}" wx:key="index" class="kj_ball_list_ball_base red_ball_bg">
                                 {{item}}
                             </view>
-                            <view class="kj_ball_list_ball_base" style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">{{cwl_data.ssq_result.Fblue_ball}}</view>
+                            <view class="kj_ball_list_ball_base blue_ball_bg">{{cwl_data.ssq_result.Fblue_ball}}</view>
                         </view>
                     </view>
                 </view>
@@ -73,18 +73,17 @@
                             </view>
                             <view class="kj_ball_list">
                                 <block wx:if="{{ item == 'sd' }}">
-                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red"  style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
                                         {{red_ball}}
                                     </view>
                                 </block>
                                 <block wx:else="">
-                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red" style="background-image: url('/img/icon/cwl_redCircle.png');background-size: cover;background-repeat: no-repeat;"
->
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red red_ball_bg">
                                         {{red_ball}}
                                     </view>
                                 </block>
 
-                                <view class="kj_ball_list_ball_base cwl_ball_add_red" wx:if="{{cwl_data[item + '_result'].Fblue_ball}}"  style="background-image: url('/img/icon/cwl_blueCircle.png');background-size: cover;background-repeat: no-repeat;">{{cwl_data[item + '_result'].Fblue_ball}}
+                                <view class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg" wx:if="{{cwl_data[item + '_result'].Fblue_ball}}">{{cwl_data[item + '_result'].Fblue_ball}}
                                 </view>
                         
                             </view>

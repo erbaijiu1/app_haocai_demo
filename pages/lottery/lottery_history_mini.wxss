@@ -211,7 +211,6 @@ page{
 
 .cwl_ball_add_blue{
     margin-left: 18px;
-    /* background-image: url('https://www.yjhcai.cn/static/img/icon/cwl_blueCircle.png'); */
     background-size: cover;
     background-repeat: no-repeat;
 }
