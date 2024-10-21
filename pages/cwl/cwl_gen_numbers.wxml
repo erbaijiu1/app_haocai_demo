@@ -1,0 +1,101 @@
+<block wx:if="{{cwl_data['check_v'] == 1}}">
+    <view>
+        <web-view src="{{web_view_url}}"></web-view>
+    </view>
+</block>
+
+<block wx:else="">
+
+    <mp-tabs tabs="{{tabs}}" activeTab="{{activeTab}}" swiperClass="weui-tabs-swiper" bindtabclick="onTabCLick" bindchange="onChange" activeClass="tab-bar-title__selected" tab-underline-color="#E02020">
+    <block wx:for="{{tabs}}" wx:key="title">
+        <view class="tab-content" slot="tab-content-{{index}}">
+
+            <!-- <view  wx:if="{{ cwl_data['check_v']!=1}}" >
+                <block wx:for="{{['ssq', 'sd', 'qlc', 'qlb']}}" wx:key="item">
+                    <view class="kj_ball_list_container">
+                        <view class="kj_ball_list_icon_container">
+                            <image src="../../img/icon/cwl_{{item}}.png" mode="aspectFit" class="kj_pic_icon" />
+                        </view>
+                        <view class="kj_ball_list_ball_issue_and_ball">
+                            <view class="kj_ball_list_desc_text">
+                                <view class="kj_ball_list_desc_text_issue">{{cwl_data[item + '_result'].cn_name}} 第{{cwl_data[item + '_result'].Fissue}}期</view>
+                                <view class="kj_ball_list_desc_text_open_day">{{cwl_data[item + '_result'].Fdate}}</view>
+                                <view class="kj_ball_list_desc_text_open_day">{{cwl_data[item + '_result'].open_day}}</view>
+                            </view>
+                            <view class="kj_ball_list">
+                                <block wx:if="{{ item == 'sd' }}">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg">
+                                        {{red_ball}}
+                                    </view>
+                                </block>
+                                <block wx:else="">
+                                    <view wx:for="{{cwl_data[item + '_result'].split_red_balls}}" wx:key="index" wx:for-item='red_ball' class="kj_ball_list_ball_base cwl_ball_add_red red_ball_bg">
+                                        {{red_ball}}
+                                    </view>
+                                </block>
+
+                                <view class="kj_ball_list_ball_base cwl_ball_add_red blue_ball_bg" wx:if="{{cwl_data[item + '_result'].Fblue_ball}}">{{cwl_data[item + '_result'].Fblue_ball}}
+                                </view>
+                        
+                            </view>
+                        </view>
+                    </view>
+
+                </block>
+            </view> -->
+
+            <view class="gen_number_container">
+                <view class="option_container">
+                    <view>
+                        <view class="option_topic">剔除历史已开的号码组合</view>
+                        <view class="option_desc">通过历史开奖数据分析，开奖号码完全重合概率低于0.1%</view>
+                    </view>
+                    <switch class="switch" bindchange="toggleHistory" checked="{{showHistory}}"></switch>
+                </view>
+
+                <view class="option_container">
+                    <view>
+                        <view class="option_topic">红球是否包含连号</view>
+                        <view class="option_desc">据统计，超过50%情况下至少开出一个连号，如17，18</view>
+                    </view>
+                    <switch class="switch" bindchange="toggleConsecutive" checked="{{requireConsecutive}}"></switch>
+                </view>
+
+                <view class="option_container">
+                    <view>
+                        <view class="option_topic">红球区间分布</view>
+                        <view class="option_desc">红球三个区间分别为：1-11，12-22，23-33</view>
+                    </view>
+                    <picker class="picker_class" mode="selector" range="{{sectionOptions}}" bindchange="onSectionChange">
+                        <view class="picker">{{selectedSection}}</view>
+                    </picker>
+                 </view>
+        
+            
+                <view class="section">
+                    <text>红球选号</text>
+                    <input class="input" placeholder="请输入红球号码" bindinput="onRedBallInput" />
+                </view>
+            
+                <view class="section">
+                    <text>生成多少注号码</text>
+                    <input class="input" type="number" bindinput="onNumberInput" />
+                </view>
+            
+                <button class="button" bindtap="generateNumbers">生成号码</button>
+            
+                <view class="result">
+                    <text>生成结果:</text>
+                    <text>{{generatedNumbers}}</text>
+                </view>
+            </view>
+
+            
+
+        </view>
+    </block>
+</mp-tabs>
+
+
+</block>
+

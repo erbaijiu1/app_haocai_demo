@@ -10,6 +10,13 @@
         "miniprogram": {
             "list": [
                 {
+                    "name": "pages/cwl/cwl_gen_numbers",
+                    "pathName": "pages/cwl/cwl_gen_numbers",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
                     "name": "pages/cwl/cwl_history_mini",
                     "pathName": "pages/lottery/lottery_history_mini",
                     "query": "",

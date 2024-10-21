@@ -1,0 +1,297 @@
+@import '../common.wxss';
+
+page{
+    background-color: #F1EDEE;
+    height: 100%;
+    /* font-size: 14px; */
+}
+
+.weui-tabs-bar__wrp {
+    border-bottom: 1px solid #eee;
+    /* margin-top: 10px; */
+}
+
+.weui-tabs-swiper {
+    width: 100%;
+    height: 740rpx;
+    background: #fff;
+}
+
+.tab-content {
+    /* height: 700px; */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    /* padding: 40rpx; */
+    background: #F1EDEE;
+}
+
+/* .weui-tabs-bar__title {
+    margin: 0px 10px;
+} */
+
+.tab-bar-title__selected {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.weui-tabs-bar__item{
+    width: 50%;
+    text-align: center;
+}
+
+.tab-bar-title__selected{
+    width: 100%;
+    color: #e02020;
+}
+
+.kj_all_list_container{
+    height: 100%;
+    width: 100%;
+    background: #F1EDEE;
+}
+.kj_pic_icon{
+    width: 100rpx;
+    height: 100rpx;
+}
+
+.kj_ball_list{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 8px;
+}
+
+
+.kj_ball_list_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #fff;
+    margin: 8px 0 0 0;
+    padding: 8px 0;
+}
+
+.kj_ball_list_icon_container{
+    height: 100rpx;
+    margin: 5px;
+}
+
+.kj_ball_list_ball_issue_and_ball{
+    width: 100%;
+}
+
+.kj_ball_list_desc_text{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 10px;
+}
+.kj_ball_list_desc_text_issue{
+    font-size: 12px;
+    color: #4a4a4a;
+    font-weight: bold; /* 让文字加粗 */
+}
+.kj_ball_list_desc_text_open_day{
+    font-size: 12px;
+    color: #525252;
+}
+
+/* 中奖详情列表 */
+.winning_detail_table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: #fff;
+}
+.winning_detail_table_header{
+    display: flex;
+    background-color: #E02020;
+    color: #fff;
+}
+
+.winning_detail_table_head_cell{
+    padding: 3px;
+    border-right: 1px solid #ddd;
+    text-align: center;
+    width: 25%;
+    font-size: 12px;
+}
+
+.winning_detail_table_head_1{
+    width: 20%;
+}
+.winning_detail_table_head_2{
+    width: 35%;
+}
+.winning_detail_table_head_3{
+    width: 20%;
+}
+.winning_detail_table_head_4{
+    width: 25%;
+}
+
+.winning_detail_table_cell{
+    padding: 7px 6px;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    text-align: center;
+    /* width: 25%; */
+    font-size: 12px;
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.winning_detail_table_cell_money{
+    color: #E02020;
+    /* font-family: fantasy; */
+    font-weight: 800;
+}
+
+.winning_detail_table_row{
+    display: flex;
+    /* height: auto; */
+    align-items: stretch;
+}
+/* .winning_detail_table_row:nth-child(even) {
+    background-color: #f2f2f2;
+  } */
+
+.kj_ball_list_prize_demo_pic{
+    width: 100%;
+    height: 100%;
+    /* height:auto; */
+}
+
+
+.kj_ball_list_klb_row{
+    width: auto;
+}
+
+/* 彩球的样式 */
+/* .kj_ball_list_ball_base{
+    font-size: 15px;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    padding: 2px 0px;
+    margin: 2px; 
+    color: #fff;
+} */
+
+.cwl_ball_add_red{
+    color: #fff;
+    margin-right: 4px;
+
+}
+
+.cwl_ball_add_blue{
+    margin-left: 18px;
+}
+
+.history_trend_btn{
+    /* color: #fff;
+    background: #E02020;
+    border: none;
+    margin: 20rpx 0;
+    font-weight: normal;
+    padding: 5px 24px; */
+    color: #E02020;
+    background: #fff;
+    border: #e02020 1px solid;
+    margin: 20rpx 0;
+    font-weight: normal;
+    padding: 5px 24px;
+}
+.view_history_btn{
+    color: #E02020;
+    background: #fff;
+    border: #e02020 1px solid;
+    margin: 20rpx 0;
+    font-weight: normal;
+    padding: 5px 24px;
+}
+
+.share_button{
+    /* color: #E02020;
+    background: #fff;
+    border: #e02020 1px solid;
+    margin: 20rpx 0;
+    font-weight: normal;
+    padding: 5px 24px; */
+    color: #fff;
+    background: #E02020;
+    border: none;
+    margin: 20rpx 0;
+    font-weight: normal;
+    padding: 5px 24px;
+}
+
+
+/*  添加开奖样式 start */
+.gen_number_container{
+    width: 100%;
+    padding: 10rpx;
+}
+.option_container{
+    font-size: 30rpx;
+    display: flex;
+    justify-content: space-between; /* 使元素两端对齐 */
+    width: 100%; /* 确保容器宽度足够 */
+}
+
+.option_desc{
+    color: #525252;
+    font-size: 20rpx;
+}
+
+.switch {
+    margin-bottom: 20px;
+}
+
+.picker_class{
+    border: #525252 1rpx solid;
+    width: 250rpx;
+    display: flex; /* 使用 Flexbox */
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    height: 50rpx; /* 设置高度以便上下居中 */
+}
+
+  
+
+  
+  .section {
+    margin-bottom: 15px;
+  }
+  
+  .input {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .button {
+    background-color: #1c87c9;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  .result {
+    margin-top: 20px;
+  }
+  

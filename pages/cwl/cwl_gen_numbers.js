@@ -1,0 +1,179 @@
+// 使用封装的request方法
+const { wx_get, wx_post, wx_app_login } = require('../../utils/wx_request.js');
+const util = require('../../utils/util');
+
+
+Page({
+  data: {
+    tabs: [],
+    activeTab: 0,
+    cwl_data:{}
+    ,prizeGrades:{1:'一等奖', 2:'二等奖',3:'三等奖',4:'四等奖',5:'五等奖',6:'六等奖'}
+    , hidden_ad_view: true
+    ,web_view_url: 'https://mp.weixin.qq.com/s/1dKDtfo3nXmVPxfTq02nmg'
+    , user_subs_status:-1
+    , login_this_time:0
+
+    ,showHistory: true,
+    requireConsecutive: false,
+    sectionOptions: ['不限', '3个区间均有分布', '至少分布2个区间','仅分布在2个区间','仅分布在一个区间'],
+    selectedSection: '不限',
+    redBallInput: '',
+    numberInput: '',
+    generatedNumbers: ''
+  }
+  , setTabs(titles){
+    const tabs = titles.map(item => ({title: item}))
+    this.setData({tabs})
+  }
+  ,onLoad(options) {
+    util.update_default_show(this, 'cwl_data.check_v');
+    const titles = ['双色球', '全部福彩']
+    this.setTabs(titles)
+
+    this.getCwlData()
+
+    if (options.activeTab) {
+        this.setData({
+            activeTab: parseInt(options.activeTab, 10)
+        });
+    }
+    this.checkActive();
+
+    wx_app_login(this);
+  }
+  ,checkActive(){
+    const app = getApp();
+    if(app.globalData&&app.globalData.hasOwnProperty('activeTab')){
+        this.setData({
+            activeTab: parseInt(app.globalData.activeTab, 10)
+        });
+        delete app.globalData.activeTab
+    }
+  }
+
+  ,onTabCLick(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
+  },
+
+  onChange(e) {
+    const index = e.detail.index
+    this.setData({activeTab: index})
+  }
+
+  ,getCwlData: function(){
+    wx_get('/hc_miniapp/get_kj_info', {'req_type':'cwl'})
+      .then(data => {
+        // console.log(data)
+        this.setData({
+            cwl_data: data
+        })
+        if(data['check_v']==1){
+            const titles = ['全部福彩']
+            this.setTabs(titles)
+        }
+      })
+      .catch(err => {
+        console.error(err)
+      })
+  }
+    // 开奖走势图
+    , goToTrendPage() {
+        wx.switchTab({
+          url: '/pages/trend/trend'
+        })
+      }
+    //   福彩开奖历史
+     , goToCWLHistoryPage() {
+        wx.navigateTo({
+          url: '/pages/cwl/cwl_history_mini'
+        })
+      }
+
+    ,onShareAppMessage: function (options) {
+        return {
+            title: '最新彩票开奖结果和中奖规则',
+            path: '/pages/cwl/cwl_daily?activeTab='+this.data.activeTab
+            // path: this.route
+        }
+    }
+
+    ,onShareTimeline: function () {
+    return {
+      title: '最新彩票开奖结果和中奖规则',
+      path: '/pages/cwl/cwl_daily?activeTab='+this.data.activeTab
+    //   path: this.data.page_url
+    }
+  }
+
+  ,onShow: function() {
+    this.getCwlData()
+    this.checkActive();
+  }
+
+  ,SwithToSubsMain:function(){
+    wx.navigateTo({
+        // url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/T0rE7SY5ZSayYdq78P30xg'
+        url: '/pages/index/common_view?web_view_url=https://mp.weixin.qq.com/s/3ALSmOKeJNX5Gu7dVxM0JQ'
+      });
+  }
+
+  ,adLoad() {
+    console.log('Banner 广告加载成功')
+  },
+  adError(err) {
+    if(err.detail && err.detail.errCode !== 1004){
+        console.error('Banner 广告加载失败', err)
+    }
+    console.log('no ad show.')
+    // 关闭广告的view
+    this.setData({
+        hidden_ad_view:true
+    })
+  },
+  adClose() {
+    console.log('Banner 广告关闭')
+  }
+
+
+
+  , toggleHistory(e) {
+    this.setData({
+      showHistory: e.detail.value
+    });
+  },
+
+  toggleConsecutive(e) {
+    this.setData({
+      requireConsecutive: e.detail.value
+    });
+  },
+
+  onSectionChange(e) {
+    this.setData({
+      selectedSection: this.data.sectionOptions[e.detail.value]
+    });
+  },
+
+  onRedBallInput(e) {
+    this.setData({
+      redBallInput: e.detail.value
+    });
+  },
+
+  onNumberInput(e) {
+    this.setData({
+      numberInput: e.detail.value
+    });
+  },
+
+  generateNumbers() {
+    const { redBallInput, numberInput } = this.data;
+    // 这里可以添加生成号码的逻辑
+    this.setData({
+      generatedNumbers: `生成的号码: ${redBallInput} (共 ${numberInput} 注)`
+    });
+  }
+
+})
